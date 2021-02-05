@@ -1,7 +1,5 @@
-App.java
- App
- App$1
- App$2
+FancyAnimationTimer.java
+ FancyAnimationTimer
 Mario.java
  Mario
 Const.java
@@ -12,5 +10,7 @@ GameObject.java
  GameObject
 Ground.java
  Ground
-FancyAnimationTimer.java
- FancyAnimationTimer
+App.java
+ App
+ App$1
+ App$2

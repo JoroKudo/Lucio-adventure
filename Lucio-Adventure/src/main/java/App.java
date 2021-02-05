@@ -27,9 +27,7 @@ public class App extends Application {
     private World<Body>  physicWorld = new World<Body>();
     private GraphicsContext gc;
     private boolean isMarioinTouch = false;
-    private boolean isLeftKeyPressed = false;
-    private boolean isRightKeyPressed = false;
-    private boolean isSpaceKeyPressed = false;
+
     private  GameObject ground1;
     private Ground n[] = new Ground[300];
 
@@ -53,6 +51,7 @@ public class App extends Application {
             public boolean collision(BroadphaseCollisionData collision) {
 
                 isMarioinTouch = true;
+
 
                 return true;
             }
@@ -79,7 +78,7 @@ public class App extends Application {
 
 
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE&&isMarioinTouch == true){
+            if (e.getCode() == KeyCode.SPACE&& isMarioinTouch){
 
                     isMarioinTouch = false;
                     mario.applyForce(new Vector2(0, 10 * Const.SCALE));
@@ -88,14 +87,14 @@ public class App extends Application {
 
             }
 
-            if (e.getCode() == KeyCode.LEFT){
+            if (e.getCode() == KeyCode.A){
                 mario.applyForce(new Vector2(-1  , 0));
                 mario.setLinearVelocity(-6,0);
 
             }
 
 
-            if (e.getCode() == KeyCode.RIGHT){
+            if (e.getCode() == KeyCode.D){
                 mario.applyForce(new Vector2(1  , 0));
                 mario.setLinearVelocity(6,0);
 
@@ -104,7 +103,7 @@ public class App extends Application {
 
         });
         scene.setOnKeyReleased(e -> {
-            if (isMarioinTouch == false) {
+            if (isMarioinTouch == true) {
 
 
                 if (e.getCode() == KeyCode.LEFT) {
