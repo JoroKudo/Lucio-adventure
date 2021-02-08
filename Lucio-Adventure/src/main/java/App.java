@@ -7,6 +7,7 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.dyn4j.collision.CollisionBody;
 import org.dyn4j.dynamics.BodyFixture;
+import org.dyn4j.geometry.Mass;
 import org.dyn4j.geometry.MassType;
 import org.dyn4j.geometry.Rectangle;
 import org.dyn4j.geometry.Vector2;
@@ -24,16 +25,11 @@ import java.util.List;
 
 public class App extends Application {
 
-    private World<Body>  physicWorld = new World<Body>();
+    private World<Body> physicWorld = new World<Body>();
     private GraphicsContext gc;
-    private boolean isMarioinTouch = false;
-
-    private  GameObject ground1;
-    private Ground n[] = new Ground[300];
 
     @Override
     public void start(Stage primaryStage) {
-
 
         Group root = new Group();
         Canvas canvas = new Canvas(Const.CANVAS_WIDTH, Const.CANVAS_HEIGHT);
@@ -44,123 +40,48 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        physicWorld.addCollisionListener(new CollisionListener() {
+        Mario mario = new Mario(10, 1);
+        Ground ground = new Ground(10, 5);
 
-
-            @Override
-            public boolean collision(BroadphaseCollisionData collision) {
-
-                isMarioinTouch = true;
-
-
-                return true;
-            }
-
-            @Override
-            public boolean collision(NarrowphaseCollisionData collision) {
-
-                return true;
-            }
-
-            @Override
-            public boolean collision(ManifoldCollisionData collision) {
-                return true;
-            }
-        });
-       /*
-                addListener(new CollisionAdapter(){
-            public boolean collision(Body body1, BodyFixture fixture1, Body body2,
-                                     BodyFixture fixture2, Penetration penetration)
-            { … }});*/
-
-        GameObject mario = new Mario(0,0);
-
-
+        physicWorld.setGravity(new Vector2(0, 9.8));
+        physicWorld.addBody(mario);
 
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE&& isMarioinTouch){
-
-                    isMarioinTouch = false;
-                    mario.applyForce(new Vector2(0, 10 * Const.SCALE));
-
-
-
+            if (e.getCode() == KeyCode.SPACE) {
+                mario.jump();
             }
 
-            if (e.getCode() == KeyCode.A){
-                mario.applyForce(new Vector2(-1  , 0));
-                mario.setLinearVelocity(-6,0);
-
+            if (e.getCode() == KeyCode.A) {
+                mario.setLinearVelocity(-100, 0);
             }
 
+            if (e.getCode() == KeyCode.D) {
+                mario.setLinearVelocity(100, 0);
+            }
+        });
 
-            if (e.getCode() == KeyCode.D){
-                mario.applyForce(new Vector2(1  , 0));
-                mario.setLinearVelocity(6,0);
+        scene.setOnKeyReleased(e -> {
+            if (e.getCode() == KeyCode.LEFT) {
+                mario.setLinearVelocity(0, 0);
+            }
 
+            if (e.getCode() == KeyCode.RIGHT) {
+                mario.setLinearVelocity(0, 0);
                 System.out.println(mario.getLinearVelocity());
             }
-
         });
-        scene.setOnKeyReleased(e -> {
-            if (isMarioinTouch == true) {
-
-
-                if (e.getCode() == KeyCode.LEFT) {
-
-                    mario.setLinearVelocity(0, 0);
-
-                }
-
-
-                if (e.getCode() == KeyCode.RIGHT) {
-
-                    mario.setLinearVelocity(0, 0);
-
-                    System.out.println(mario.getLinearVelocity());
-                }
-
-            }});
-
-
-        physicWorld.addBody(mario);
-        for (int i = 0; i < 300; i++) {
-            n[i] = new Ground(i,-10);
-            physicWorld.addBody(n[i]);
-
-
-
-
-        }
-
-
 
         FancyAnimationTimer animationTimer = new FancyAnimationTimer() {
             @Override
             protected void doHandle(double elapsedTime) {
                 physicWorld.update(elapsedTime);
-
-                gc.drawImage(Images.GAME_BACKGROUND, 0, 0);
-
-                for (int i = 0; i < 300; i++) {
-
-                    n[i].draw(gc);
-
-
-
-                }
-
+                //gc.drawImage(Images.GAME_BACKGROUND, 0, 0);
+                gc.clearRect(0,0, Const.CANVAS_WIDTH, Const.CANVAS_HEIGHT);
                 mario.draw(gc);
-
-
-
-
+                ground.draw(gc);
             }
         };
 
         animationTimer.start();
-
-
     }
-
 }
