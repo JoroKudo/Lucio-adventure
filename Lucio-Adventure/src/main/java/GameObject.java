@@ -10,14 +10,16 @@ import org.dyn4j.geometry.Vector2;
 
 public abstract class GameObject extends Body {
 
-    private final Image image;
+    protected Image image;
 
     public GameObject(Image image, double x, double y)  {
         this.image = image;
         this.translate(x, y);
 
         addFixture(new Rectangle(image.getWidth() / Const.SCALE, image.getHeight() / Const.SCALE));
+
     }
+
 
     public void draw(GraphicsContext gc) {
 
