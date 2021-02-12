@@ -18,7 +18,7 @@ public class Lucio extends GameObject {
     }
 
     public void jump(){
-        applyForce(new Vector2(0, -10 * Const.SCALE));
+        applyForce(new Vector2(0, -15 * Const.BLOCK_SIZE));
     }
 
     public void walkLeft() {

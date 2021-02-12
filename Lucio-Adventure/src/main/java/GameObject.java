@@ -6,7 +6,6 @@ import org.dyn4j.dynamics.BodyFixture;
 import org.dyn4j.geometry.AABB;
 import org.dyn4j.geometry.Polygon;
 import org.dyn4j.geometry.Rectangle;
-import org.dyn4j.geometry.Vector2;
 
 public abstract class GameObject extends Body {
 
@@ -16,43 +15,23 @@ public abstract class GameObject extends Body {
         this.image = image;
         this.translate(x, y);
 
-        addFixture(new Rectangle(image.getWidth() / Const.SCALE, image.getHeight() / Const.SCALE));
-
+        addFixture(new Rectangle(image.getWidth() / Const.BLOCK_SIZE, image.getHeight() / Const.BLOCK_SIZE));
     }
-
 
     public void draw(GraphicsContext gc) {
 
         Affine originTrans = gc.getTransform();
-        Affine transfrom = new Affine();
-        transfrom.appendTranslation(this.transform.getTranslationX() * Const.SCALE, this.transform.getTranslationY() * Const.SCALE);
-        transfrom.appendRotation(this.transform.getRotation().toDegrees());
-        transfrom.appendTranslation(1, -1);
-
-        gc.transform(transfrom);
+        Affine transform = new Affine();
+        transform.appendTranslation(this.transform.getTranslationX() * Const.BLOCK_SIZE, this.transform.getTranslationY() * Const.BLOCK_SIZE);
+        transform.appendRotation(this.transform.getRotation().toDegrees());
+        transform.appendTranslation(1, -1);
+        gc.transform(transform);
 
         Polygon rect = (Polygon) this.getFixture(0).getShape();
-        double x = rect.getVertices()[0].x;
-        double y = rect.getVertices()[0].y;
+        double x = rect.getVertices()[0].x + 0.5;
+        double y = rect.getVertices()[0].y + 0.5;
 
-        // We need the top left corner of our hitbox.
-        //AABB aabb = this.getFixture(0).getShape().createAABB();
-        //double x = getWorldCenter().x + aabb.getMinX();
-        //double y = getWorldCenter().y + aabb.getMinY();
-        gc.drawImage(image, x * Const.SCALE , y * Const.SCALE); // Für Java FX zu Dyn4J muss die Y-Achse gespiegelt werden
-
+        gc.drawImage(image, x * Const.BLOCK_SIZE , y * Const.BLOCK_SIZE);
         gc.setTransform(originTrans);
-
     }
 }
-
-
-        /*AffineTransform ot = g.getTransform();
-        AffineTransform lt = new AffineTransform();
-        lt.translate(this.transform.getTranslationX() * Window.SCALE, this.transform.getTranslationY() * Window.SCALE);
-        lt.rotate(this.transform.getRotation());
-        gc.transform(lt);
-        for (BodyFixture fixture : this.fixtures) {
-            this.draw(g, (Polygon) fixture.getShape(), Window.SCALE);
-        }
-        g.setTransform(ot);*/
