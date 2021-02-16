@@ -9,37 +9,52 @@ public class Lucio extends GameObject {
 
     private World<Body> physicWorld;
     private Direction currentDirect = Direction.RIGHT;
+    private int y;
+
 
     public Lucio(double x, double y, World<Body> physicWorld) {
         super(Images.MARIORIGHT, x, y);
         this.physicWorld = physicWorld;
 
         setMass(MassType.NORMAL);
+        if (isOnGround()) {
+            y = 0;
+        } else {
+            y = -50;
+        }
     }
 
-    public void jump(){
-        applyForce(new Vector2(0, -15 * Const.BLOCK_SIZE));
+    public void jump() {
+        applyForce(new Vector2(0, -60 * Const.BLOCK_SIZE));
     }
 
     public void walkLeft() {
         currentDirect = Direction.LEFT;
-        setLinearVelocity(-4, 0);
-    }
-    public void walkRight(){
-        currentDirect = Direction.RIGHT;
-        setLinearVelocity(4, 0);
+
+
+            setLinearVelocity(-4, y);
+
     }
 
-    public void update(){
+    public void walkRight() {
+        currentDirect = Direction.RIGHT;
+
+
+            setLinearVelocity(4, y);
+
+    }
+
+
+    public void update() {
         image = getCurrentImage();
     }
 
     private Image getCurrentImage() {
         if (isOnGround() && (currentDirect == Direction.LEFT)) {
             return Images.MARIOLEFT;
-        } else if (isOnGround() && (currentDirect == Direction.RIGHT)){
+        } else if (isOnGround() && (currentDirect == Direction.RIGHT)) {
             return Images.MARIORIGHT;
-        } else if (!isOnGround() && (currentDirect == Direction.RIGHT)){
+        } else if (!isOnGround() && (currentDirect == Direction.RIGHT)) {
             return Images.LUCIO_JUMP_RIGHT;
         } else if (!isOnGround() && (currentDirect == Direction.LEFT)) {
             return Images.LUCIO_JUMP_LEFT;

@@ -1,26 +1,32 @@
-FancyAnimationTimer.java
- FancyAnimationTimer
-Const.java
- Const
-Direction.java
- Direction
-GameObject.java
- GameObject
-Block.java
- Block
-Coin.java
- Coin
+CompanianCube.java
+ CompanianCube
 Door.java
  Door
-Images.java
- Images
 Floor.java
  Floor
 Lucio.java
  Lucio
+GameObject.java
+ GameObject
+Block.java
+ Block
+Rooms.java
+ Rooms
 App.java
  App
  App$1
  App$2
-Rooms.java
- Rooms
+CoinCounter.java
+ CoinCounter
+Const.java
+ Const
+Direction.java
+ Direction
+Coin.java
+ Coin
+Images.java
+ Images
+Score.java
+ Score
+FancyAnimationTimer.java
+ FancyAnimationTimer
