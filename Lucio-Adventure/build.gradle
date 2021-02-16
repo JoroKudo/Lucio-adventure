@@ -22,7 +22,7 @@ test {
     useJUnitPlatform()
 }
 
-mainClassName = 'App'
+mainClassName = 'LucioAbenteuer.main.App'
 
 javafx {
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.graphics']
