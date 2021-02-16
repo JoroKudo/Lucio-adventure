@@ -18,8 +18,8 @@ LucioAbenteuer/GameObjects/Lucio.java
  LucioAbenteuer.GameObjects.Lucio
 LucioAbenteuer/GameObjects/CompanianCube.java
  LucioAbenteuer.GameObjects.CompanianCube
-LucioAbenteuer/main/Launcher.java
- LucioAbenteuer.main.Launcher
+LucioAbenteuer/GameObjects/Floor.java
+ LucioAbenteuer.GameObjects.Floor
 LucioAbenteuer/GameObjects/Coin.java
  LucioAbenteuer.GameObjects.Coin
 LucioAbenteuer/GameObjects/Door.java
@@ -32,8 +32,10 @@ LucioAbenteuer/GameObjects/Button.java
  LucioAbenteuer.GameObjects.Button
 LucioAbenteuer/GameObjects/Block.java
  LucioAbenteuer.GameObjects.Block
-LucioAbenteuer/GameObjects/Floor.java
- LucioAbenteuer.GameObjects.Floor
+LucioAbenteuer/main/Launcher.java
+ LucioAbenteuer.main.Launcher
+LucioAbenteuer/Collision.java
+ LucioAbenteuer.Collision
 LucioAbenteuer/main/App.java
  LucioAbenteuer.main.App
  LucioAbenteuer.main.App$1
