@@ -1,3 +1,4 @@
+
 import org.dyn4j.dynamics.Body;
 
 import java.util.ArrayList;
@@ -6,12 +7,10 @@ import java.util.List;
 public class Rooms {
 
     public static String room1 =
-            "000000000000000000000000000000" +
-
                     "000000000000000000000000000000" +
                     "000000000000000000000000000000" +
                     "000000000000000000000000000000" +
-
+                    "000000000000000000000000000000" +
                     "000000000000000000000000000000" +
                     "000000000000000000000000000000" +
                     "0C0000000C0000000D000000000000" +
@@ -26,14 +25,10 @@ public class Rooms {
                     "00000000000000FF00000000000000";
 
     public static String testRoom =
-            "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" +
-
-
+                    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" +
                     "B0000000000000000000000000000B" +
                     "000000000000000000000000000000" +
                     "000000000000000000000000000000" +
-
-                    "B0000000000000000000000000000B" +
                     "B0000000000000000000000000000B" +
                     "BC0000000C0000000D00000000000B" +
                     "B0000000000000BBBBBBB00000000B" +
@@ -41,10 +36,12 @@ public class Rooms {
                     "BBB0000BBBB000000000000000000B" +
                     "B0000000000000000000000000000B" +
                     "B0000000000000000000000000000B" +
+                    "B00000000000000000000000R0000B" +
+                    "BCCCCCCCCCC000CCCCCCCCC000CCCC" +
                     "B0000000000000000000000000000B" +
-                    "BCCCCCCCCCC000CCCCCCCCC0R0CCCC" +
-                    "B0000000000000000000000000000B" +
-                    "B000FF000000000000000000FF000B";
+                    "B00K0000000000FF00000000FF000B"+
+                    "BBBBBBB0000000000000000000000B" ;
+
 
 
     public static List<Body> createRoom(String roomname) {
@@ -67,6 +64,7 @@ public class Rooms {
                 case 'D' -> bodiesFromRoom.add(new Door(x, y));
 
                 case 'R' -> bodiesFromRoom.add(new CompanianCube(x, y));
+                case 'K' -> bodiesFromRoom.add(new Button(x, y));
 
 
             }

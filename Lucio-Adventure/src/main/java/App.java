@@ -1,13 +1,10 @@
+
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
-import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.dyn4j.dynamics.BodyFixture;
 import org.dyn4j.geometry.Vector2;
@@ -15,6 +12,15 @@ import org.dyn4j.world.BroadphaseCollisionData;
 import org.dyn4j.world.World;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.world.listener.CollisionListenerAdapter;
+
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class App extends Application {
 
@@ -36,11 +42,12 @@ public class App extends Application {
 
 
         root.getChildren().add(canvas);
-        Scene scene = new Scene(root,750,400);
+        Scene scene = new Scene(root);
 
         primaryStage.setScene(scene);
         primaryStage.setMaximized(true);
         primaryStage.show();
+        gc.setFill(Color.RED);
 
 
         physicWorld.setGravity(new Vector2(0, 9.8));
@@ -49,6 +56,14 @@ public class App extends Application {
         for (Body body : Rooms.createRoom(Rooms.testRoom)) {
             physicWorld.addBody(body);
         }
+
+
+
+
+
+
+
+
 
 
         physicWorld.addCollisionListener(new CollisionListenerAdapter<>() {
@@ -92,6 +107,25 @@ public class App extends Application {
                     return false;
                 }
 
+                if (body1 instanceof CompanianCube && body2 instanceof Button) {
+                    System.out.println("activ");
+
+                    gc.setFill(Color.GREEN);
+
+
+                    return false;
+                }
+
+                if (body2 instanceof CompanianCube  && body1 instanceof Button) {
+                    System.out.println("activ");
+
+                    gc.setFill(Color.GREEN);
+
+                    return false;
+                }
+
+
+
 
                 return true;
 
@@ -99,6 +133,14 @@ public class App extends Application {
 
 
         });
+
+
+
+
+
+
+
+
 
         scene.setOnKeyPressed(e -> {
             if (lucio.isOnGround()) {
@@ -133,6 +175,8 @@ public class App extends Application {
                 gc.drawImage(Images.GAME_BACKGROUND, 0, 0);
                 lucio.getTransform().setRotation(0);
                 lucio.update();
+
+
 
 
                 for (Body body : physicWorld.getBodies()) {
@@ -171,4 +215,8 @@ public class App extends Application {
         }
 
     }
+    public void drawShapes(int x, int y) {
+
+
+        gc.fillOval(x, y, 50, 50);}
 }

@@ -12,6 +12,8 @@ public class Images {
     public final static Image BLOCK = getImageSize("Block.png");
     public final static Image DOOR = getImageSize("Door.png");
     public final static Image COMPANIAN = getImageSize("companianCube.png");
+    public final static Image BUTTON = getImageSize("Buttonn.png");
+    public final static Image BUTTONACTIV = getImageSize("ActivButton.png");
 
     private static Image getImage(String imagePath,double height, double width) {
         try {
