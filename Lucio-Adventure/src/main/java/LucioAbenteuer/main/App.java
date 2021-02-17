@@ -38,7 +38,7 @@ public class App extends Application {
 
         navigator.goTo(SceneType.WELCOME);
 
-        Sound.play(MusicType.BACKGROUND);
+
 
 
 

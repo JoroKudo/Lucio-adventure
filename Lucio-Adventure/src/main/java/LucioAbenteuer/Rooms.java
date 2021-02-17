@@ -3,6 +3,7 @@ package LucioAbenteuer;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.world.PhysicsWorld;
 import LucioAbenteuer.GameObjects.*;
+import org.dyn4j.world.World;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +25,8 @@ public class Rooms {
                     "0000000000000L000000000000000C" +
                     "0000000000000BBBBBBBBBBBB00000" +
                     "000000000000000000000000000000" +
-                    "0000000000000000000000000000BB" +
-                    "000000000000000000000000000000" +
+                    "W0000000000000000HHH000000000W" +
+                    "W0000000000000000HHH000000000W" +
                     "00F00000000000FF000000000000F0";
 
     public static String testRoom =
@@ -39,10 +40,10 @@ public class Rooms {
                     "W00000000000C0C0C0C0000C00000W" +
                     "WBB0BBBB000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
+                    "W00000000000BBBBBBB0000000000W" +
                     "W00000000000000000000000R0000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
+                    "W0000H00000000000000000000000W" +
+                    "W0000000000000000HHH000000000W" +
                     "W0K00000000000000000000000000W"+
                     "WBBB0000000000000FF0000000000W" ;
 
@@ -67,6 +68,8 @@ public class Rooms {
 
 
                 case 'D' -> bodiesFromRoom.add(new Door(x, y));
+                case 'H' -> bodiesFromRoom.add(new Heart(x, y));
+
 
 
                 case 'R' -> bodiesFromRoom.add(new CompanianCube(x, y));
@@ -78,7 +81,7 @@ public class Rooms {
         }
         return bodiesFromRoom;
     }
-    public static  void roomchanges(int room, PhysicsWorld physicWorld) {
+    public static  void roomchanges(int room, World<Body> physicWorld) {
 
 
         switch (room) {

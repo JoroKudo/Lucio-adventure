@@ -57,8 +57,8 @@ public class Sound {
 
     private static String getSoundFileName(SoundEffectType soundEffect) {
         switch (soundEffect) {
-            case LASER_FIRED:
-                return "Lucio_BGM.mp3";
+            case HEAL:
+                return "Heart.mp3";
             case SPACESHIP_EXPLODE:
                 return "Lucio_BGM.mp3";
             default:
@@ -71,7 +71,7 @@ public class Sound {
             case BACKGROUND:
                 return "Lucio_BGM.mp3";
             case INTRO:
-                return "Lucio_BGM.mp3";
+                return "MainMenu.wav";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + music);
         }

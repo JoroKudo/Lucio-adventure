@@ -34,6 +34,7 @@ public class Collision {
         handleLucioDoor();
         handleCubeButton();
         handleLucioLaser();
+        handleLucioHeart();
 
     }
 
@@ -51,6 +52,34 @@ public class Collision {
             physicWorld.removeBody(body1);
 
             score.coinCounter++;
+
+            return false;
+        }
+        return true;
+    }
+    public boolean handleLucioHeart() {
+
+
+        if (body1 instanceof Lucio && body2 instanceof Heart) {
+            physicWorld.removeBody(body2);
+            if(healthBar.life !=3){
+
+
+            healthBar.life++;
+                }
+            Sound.play(SoundEffectType.HEAL);
+            return false;
+        }
+
+        if (body2 instanceof Lucio && body1 instanceof Heart) {
+            physicWorld.removeBody(body1);
+
+            if(healthBar.life !=3){
+
+
+                healthBar.life++;}
+            Sound.play(SoundEffectType.HEAL);
+
 
             return false;
         }

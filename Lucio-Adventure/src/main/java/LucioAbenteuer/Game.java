@@ -25,6 +25,8 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
     private final Runnable gameLoopStopper;
     private final Navigator navigator;
     public final World<Body> physicWorld = new World<>();
+    public HealthBar healthBar;
+
 
 
 
@@ -48,6 +50,7 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
 
 
+
     public void draw(GraphicsContext gc) {
 
         gc.drawImage(Images.bgp, 0, 0);
@@ -63,10 +66,14 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
         collisioner.healthBar.draw(gc);
     }
     public void load(){
+        healthBar = collisioner.healthBar;
 
         lucio = new Lucio(11, 11, physicWorld,keyEventHandler);
-        physicWorld.setGravity(new Vector2(0, 9.8));
+
+
+        physicWorld.setGravity(new Vector2(0, 15));
         physicWorld.addBody(lucio);
+
         for (Body body : Rooms.createRoom(Rooms.testRoom)) {
             physicWorld.addBody(body);
         }
@@ -94,11 +101,15 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
     public void update(double elapsedTime) {
         physicWorld.update(elapsedTime);
         lucio.handleNavigationEvents();
+        lucio.jump(elapsedTime);
 
 
 
         lucio.getTransform().setRotation(0);
         lucio.update();
+        if (healthBar.life==0)
+            navigator.goTo(SceneType.GAME_OVER);
+
     }
 
 

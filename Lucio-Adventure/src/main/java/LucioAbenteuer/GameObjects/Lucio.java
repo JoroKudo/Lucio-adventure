@@ -9,9 +9,12 @@ import org.dyn4j.world.World;
 
 public class Lucio extends GameObject {
 
+
     private World<Body> physicWorld;
     private Direction currentDirect = Direction.RIGHT;
     private final KeyEventHandler keyEventHandler;
+    private double shipBattery = 1;
+    public Vector2 max =new Vector2(-4, -0);
 
     public Lucio(double x, double y, World<Body> physicWorld, KeyEventHandler keyEventHandler) {
         super(Images.MARIORIGHT, x, y);
@@ -19,26 +22,31 @@ public class Lucio extends GameObject {
         this.keyEventHandler = keyEventHandler;
 
         setMass(MassType.NORMAL);
+
+
     }
 
 
-    public void jump() {
-        applyForce(new Vector2(0, -1500));
-    }
+
 
     public void walkLeft() {
+
+
         currentDirect = Direction.LEFT;
 
+        setLinearVelocity(-4,getLinearVelocity().y);
 
-        setLinearVelocity(-4, 0);
+
 
     }
 
     public void walkRight() {
+
         currentDirect = Direction.RIGHT;
 
 
-        setLinearVelocity(4, 0);
+        setLinearVelocity(4,getLinearVelocity().y);
+
 
     }
 
@@ -50,16 +58,18 @@ public class Lucio extends GameObject {
             walkRight();
         if (keyEventHandler.isLeftKeyPressed())
             walkLeft();
+        if ((keyEventHandler.isRightKeyReleased()&&isOnGround())&&(keyEventHandler.isLeftKeyReleased()&&isOnGround() )){
+             setLinearVelocity(0,0);}
 
 
 
 
-        if (isOnGround()) {
-            if (keyEventHandler.isSpaceKeyPressed()) {
-                jump();
 
-            }
-        }
+
+
+
+
+
 
 
 
@@ -68,6 +78,15 @@ public class Lucio extends GameObject {
 
 
     }
+    public void jump(double deltaInSec) {
+        if (isOnGround()) {
+        if (keyEventHandler.isSpaceKeyPressed() && shipBattery > 1) {
+            applyForce(new Vector2(0, -1500));
+            shipBattery = 0;
+        } else {
+            shipBattery += 100*deltaInSec;
+        }
+    }}
 
 
 
@@ -92,6 +111,7 @@ public class Lucio extends GameObject {
         for (Body body : physicWorld.getBodies()) {
             if (physicWorld.isInContact(this, body)) {
                 if (!(body instanceof Lucio)) {
+                    setLinearVelocity(getLinearVelocity().x,1);
                     return true;
                 }
             }

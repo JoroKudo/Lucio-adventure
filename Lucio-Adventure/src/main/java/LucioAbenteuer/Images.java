@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 public class Images {
 
 
-
+    public final static Image MAINMENU = getImageSize("LucioMainMenu.png");
     public final static Image MARIORIGHT = getImageSize("LucioRight.png");
     public final static Image MARIOLEFT = getImageSize("LucioLeft.png");
     public final static Image LUCIO_JUMP_LEFT = getImageSize("Lucio_Jump_Left.png");
@@ -17,6 +17,7 @@ public class Images {
     public final static Image BLOCK = getImageSize("Block.png");
     public final static Image WALL = getImageSize("Wall.png");
     public final static Image DOOR = getImageSize("Door.png");
+    public final static Image HEART = getImageSize("Heart.png");
     public final static Image COMPANIAN = getImageSize("companianCube.png");
     public final static Image BUTTON = getImageSize("Buttonn.png");
     public final static Image LIGHTOFF = getImageSize("LightOff.png");
@@ -26,7 +27,8 @@ public class Images {
     public final static Image FULLHP = getImageSize("FullHP.png");
     public final static Image LASER = getImageSize("Laser.png");
     public final static Image LASER_BEAM = getImageSize("LaserBeam.png");
-    public final static Image LASER_SPARK = getImageSize("LaserSpark.png");
+    public final static Image GAMEOVER = getImageSize("GameOver.png");
+
     public static Image bgp = Images.LVL1;
 
     private static Image getImage(String imagePath,double height, double width) {

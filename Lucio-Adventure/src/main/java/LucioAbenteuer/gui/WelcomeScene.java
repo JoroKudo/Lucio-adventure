@@ -11,7 +11,7 @@ import javafx.scene.input.KeyCode;
 public class WelcomeScene extends BaseScene implements Initializable {
 
     public WelcomeScene(Navigator navigator) {
-        super(navigator, Images.LVL2);
+        super(navigator, Images.MAINMENU);
         setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.SPACE){
                 navigator.goTo(SceneType.GAME);
