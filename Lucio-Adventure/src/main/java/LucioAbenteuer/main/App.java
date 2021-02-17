@@ -2,6 +2,7 @@ package LucioAbenteuer.main;
 
 import LucioAbenteuer.*;
 import LucioAbenteuer.GameObjects.*;
+import LucioAbenteuer.common.FancyAnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -27,7 +28,7 @@ public class App extends Application {
 
 
     public Lucio lucio = new Lucio(11, 11, physicWorld);
-    public Collision collisioner  = new Collision(this);
+;
 
 
 
@@ -69,22 +70,6 @@ public class App extends Application {
 
 
 
-        physicWorld.addCollisionListener(new CollisionListenerAdapter<>() {
-            @Override
-            public boolean collision(BroadphaseCollisionData<Body, BodyFixture> collision) {
-                Body body1 = collision.getBody1();
-                Body body2 = collision.getBody2();
-                collisioner.handle(body1,body2,physicWorld);
-
-
-
-
-                return true;
-
-            }
-
-
-        });
 
 
 
@@ -94,56 +79,9 @@ public class App extends Application {
 
 
 
-        scene.setOnKeyPressed(e -> {
-            if (lucio.isOnGround()) {
-                if (e.getCode() == KeyCode.SPACE) {
-                    lucio.jump();
-
-                }
-            }
-            if (e.getCode() == KeyCode.A) {
-                lucio.walkLeft();
-            }
-            if (e.getCode() == KeyCode.D) {
-                lucio.walkRight();
-            }
-
-        });
-
-        scene.setOnKeyReleased(e -> {
-            if (e.getCode() == KeyCode.LEFT) {
-                lucio.setLinearVelocity(0, 0);
-            }
-            if (e.getCode() == KeyCode.RIGHT) {
-                lucio.setLinearVelocity(0, 0);
-                System.out.println(lucio.getLinearVelocity());
-            }
-        });
-
-        FancyAnimationTimer animationTimer = new FancyAnimationTimer() {
-            @Override
-            protected void doHandle(double elapsedTime) {
-                physicWorld.update(elapsedTime);
-                gc.drawImage(Images.bgp, 0, 0);
-                lucio.getTransform().setRotation(0);
-                lucio.update();
 
 
 
-
-
-                for (Body body : physicWorld.getBodies()) {
-                    GameObject gameObject = (GameObject) body;
-                    gameObject.draw(gc);
-                }
-                collisioner.score.draw(gc);
-                collisioner.exitLight.draw(gc);
-                collisioner.healthBar.draw(gc);
-
-            }
-        };
-
-        animationTimer.start();
 
     }
 

@@ -11,7 +11,7 @@ public class Lucio extends GameObject {
 
     private World<Body> physicWorld;
     private Direction currentDirect = Direction.RIGHT;
-    private int y;
+
 
 
     public Lucio(double x, double y, World<Body> physicWorld) {
@@ -19,11 +19,7 @@ public class Lucio extends GameObject {
         this.physicWorld = physicWorld;
 
         setMass(MassType.NORMAL);
-        if (isOnGround()) {
-            y = 0;
-        } else {
-            y = -50;
-        }
+
     }
 
     public void jump() {
@@ -34,7 +30,7 @@ public class Lucio extends GameObject {
         currentDirect = Direction.LEFT;
 
 
-            setLinearVelocity(-4, y);
+            setLinearVelocity(-4, 0);
 
     }
 
@@ -42,7 +38,7 @@ public class Lucio extends GameObject {
         currentDirect = Direction.RIGHT;
 
 
-            setLinearVelocity(4, y);
+            setLinearVelocity(4, 0);
 
     }
 

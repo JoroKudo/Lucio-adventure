@@ -12,7 +12,7 @@ import javafx.scene.input.KeyCode;
 public class GameOverScene extends BaseScene implements Initializable {
 
     public GameOverScene(Navigator navigator) {
-        super(navigator, Images.GAME_OVER_BACKGROUND);
+        super(navigator, Images.LVL1);
 
         setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.SPACE){

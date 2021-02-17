@@ -21,7 +21,7 @@ public abstract class BaseScene extends Scene {
 
     public BaseScene(Navigator navigator, Image backgroundImage) {
         this(navigator);
-        drawBackgroundImage(backgroundImage);
+
     }
 
 

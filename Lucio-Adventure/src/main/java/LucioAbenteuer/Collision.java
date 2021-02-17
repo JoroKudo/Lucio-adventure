@@ -9,10 +9,10 @@ import org.dyn4j.world.World;
 
 public class Collision {
 
-    public Collision(App app) {
-        this.app = app;
+    public Collision(Game game) {
+        this.game = game;
     }
-    private App app;
+    private Game game;
 
     public Score score = new Score();
     public ExitLight exitLight = new ExitLight();
@@ -60,9 +60,9 @@ public class Collision {
         if ((body1 instanceof Lucio && body2 instanceof Door && isOpen)||(body2 instanceof Lucio && body1 instanceof Door && isOpen)) {
 
             room++;
-            app.lucio = new Lucio(5, 11, physicWorld);
+            game.lucio = new Lucio(5, 11, physicWorld);
             physicWorld.removeAllBodies();
-            physicWorld.addBody(app.lucio);
+            physicWorld.addBody(game.lucio);
             Rooms.roomchanges(room, physicWorld);
             Images.bgp =Images.LVL2;
             ExitLight.e =55;
@@ -93,9 +93,9 @@ public class Collision {
         if (body1 instanceof Lucio && body2 instanceof Laser) {
             healthBar.life--;
 
-            app.lucio = new Lucio(5, 11, physicWorld);
+            game.lucio = new Lucio(5, 11, physicWorld);
             physicWorld.removeBody(body1);
-            physicWorld.addBody(app.lucio);
+            physicWorld.addBody(game.lucio);
 
             return false;
         }
@@ -104,9 +104,9 @@ public class Collision {
             physicWorld.removeBody(body1);
 
 
-            app.lucio = new Lucio(5, 11, physicWorld);
+            game.lucio = new Lucio(5, 11, physicWorld);
             physicWorld.removeBody(body2);
-            physicWorld.addBody(app.lucio);
+            physicWorld.addBody(game.lucio);
 
             return false;
         }

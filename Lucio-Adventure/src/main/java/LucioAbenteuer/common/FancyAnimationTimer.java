@@ -1,5 +1,4 @@
 package LucioAbenteuer.common;
-
 import javafx.animation.AnimationTimer;
 
 public abstract class FancyAnimationTimer extends AnimationTimer {

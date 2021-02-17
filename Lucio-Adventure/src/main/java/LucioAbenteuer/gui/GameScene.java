@@ -1,13 +1,13 @@
 package LucioAbenteuer.gui;
 
 import LucioAbenteuer.common.BaseScene;
-import LucioAbenteuer.FancyAnimationTimer;
+import LucioAbenteuer.common.FancyAnimationTimer;
 import LucioAbenteuer.common.Initializable;
 import LucioAbenteuer.common.Navigator;
 import LucioAbenteuer.KeyEventHandler;
 import LucioAbenteuer.MusicType;
 import LucioAbenteuer.Sound;
-import LucioAbenteuer.Space;
+import LucioAbenteuer.Game;
 
 public class GameScene extends BaseScene implements Initializable {
 
@@ -27,14 +27,14 @@ public class GameScene extends BaseScene implements Initializable {
 
         Sound.play(MusicType.BACKGROUND);
 
-        Space space = new Space(keyEventHandler, navigator, () -> gameLoop.stop());
-        space.load();
+        Game game = new Game(keyEventHandler, navigator, () -> gameLoop.stop());
+
 
         gameLoop = new FancyAnimationTimer() {
             @Override
             public void doHandle(double deltaInSec) {
-                space.update(deltaInSec);
-                space.draw(canvas.getGraphicsContext2D());
+                game.update(deltaInSec);
+                game.draw(canvas.getGraphicsContext2D());
             }
         };
         gameLoop.start();
