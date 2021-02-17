@@ -19,6 +19,7 @@ public abstract class GameObject extends Body {
         addFixture(new Rectangle(image.getWidth() / Const.BLOCK_SIZE, image.getHeight() / Const.BLOCK_SIZE));
     }
 
+
     public void draw(GraphicsContext gc) {
 
         Affine originTrans = gc.getTransform();

@@ -3,6 +3,8 @@ package LucioAbenteuer.main;
 import LucioAbenteuer.*;
 import LucioAbenteuer.GameObjects.*;
 import LucioAbenteuer.common.FancyAnimationTimer;
+import LucioAbenteuer.common.Navigator;
+import LucioAbenteuer.gui.*;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -24,42 +26,30 @@ import javafx.scene.paint.Color;
 
 public class App extends Application {
 
-    public final World<Body> physicWorld = new World<>();
-
-
-    public Lucio lucio = new Lucio(11, 11, physicWorld);
-;
-
-
-
-
-    private GraphicsContext gc;
 
 
     @Override
     public void start(Stage primaryStage) {
+        Navigator navigator = new Navigator(primaryStage);
+        navigator.registerScene(SceneType.WELCOME, new WelcomeScene(navigator));
+        navigator.registerScene(SceneType.GAME, new GameScene(navigator));
+        navigator.registerScene(SceneType.GAME_OVER, new GameOverScene(navigator));
+        navigator.registerScene(SceneType.GAME_WON, new GameWonScene(navigator));
+
+        navigator.goTo(SceneType.WELCOME);
+
         Sound.play(MusicType.BACKGROUND);
 
-        Group root = new Group();
-        Canvas canvas = new Canvas(Const.CANVAS_WIDTH, Const.CANVAS_HEIGHT);
-        gc = canvas.getGraphicsContext2D();
 
 
-        root.getChildren().add(canvas);
-        Scene scene = new Scene(root);
-
-        primaryStage.setScene(scene);
         primaryStage.setMaximized(true);
         primaryStage.show();
 
 
 
-        physicWorld.setGravity(new Vector2(0, 9.8));
-        physicWorld.addBody(lucio);
 
-        for (Body body : Rooms.createRoom(Rooms.testRoom)) {
-            physicWorld.addBody(body);
-        }
+
+
 
 
 

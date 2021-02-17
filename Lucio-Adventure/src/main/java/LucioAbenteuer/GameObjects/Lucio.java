@@ -11,16 +11,16 @@ public class Lucio extends GameObject {
 
     private World<Body> physicWorld;
     private Direction currentDirect = Direction.RIGHT;
+    private final KeyEventHandler keyEventHandler;
 
-
-
-    public Lucio(double x, double y, World<Body> physicWorld) {
+    public Lucio(double x, double y, World<Body> physicWorld, KeyEventHandler keyEventHandler) {
         super(Images.MARIORIGHT, x, y);
         this.physicWorld = physicWorld;
+        this.keyEventHandler = keyEventHandler;
 
         setMass(MassType.NORMAL);
-
     }
+
 
     public void jump() {
         applyForce(new Vector2(0, -1500));
@@ -30,7 +30,7 @@ public class Lucio extends GameObject {
         currentDirect = Direction.LEFT;
 
 
-            setLinearVelocity(-4, 0);
+        setLinearVelocity(-4, 0);
 
     }
 
@@ -38,9 +38,37 @@ public class Lucio extends GameObject {
         currentDirect = Direction.RIGHT;
 
 
-            setLinearVelocity(4, 0);
+        setLinearVelocity(4, 0);
 
     }
+
+    public void handleNavigationEvents() {
+
+
+
+        if (keyEventHandler.isRightKeyPressed() )
+            walkRight();
+        if (keyEventHandler.isLeftKeyPressed())
+            walkLeft();
+
+
+
+
+        if (isOnGround()) {
+            if (keyEventHandler.isSpaceKeyPressed()) {
+                jump();
+
+            }
+        }
+
+
+
+
+
+
+
+    }
+
 
 
     public void update() {

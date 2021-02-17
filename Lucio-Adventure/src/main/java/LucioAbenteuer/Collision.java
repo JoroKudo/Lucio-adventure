@@ -12,6 +12,7 @@ public class Collision {
     public Collision(Game game) {
         this.game = game;
     }
+
     private Game game;
 
     public Score score = new Score();
@@ -22,14 +23,13 @@ public class Collision {
     private int room = 1;
     private Body body1;
     private Body body2;
-    private  World<Body> physicWorld;
+    private World<Body> physicWorld;
 
 
-
-    public void handle(Body body1,Body body2, World<Body> physicWorld) {
-        this.physicWorld =physicWorld;
+    public void handle(Body body1, Body body2, World<Body> physicWorld) {
+        this.physicWorld = physicWorld;
         this.body1 = body1;
-        this.body2 =body2;
+        this.body2 = body2;
         handleLucioCoin();
         handleLucioDoor();
         handleCubeButton();
@@ -37,7 +37,7 @@ public class Collision {
 
     }
 
-    public Boolean handleLucioCoin() {
+    public boolean handleLucioCoin() {
 
         if (body1 instanceof Lucio && body2 instanceof Coin) {
             physicWorld.removeBody(body2);
@@ -56,17 +56,17 @@ public class Collision {
         }
         return true;
     }
-    public Boolean handleLucioDoor() {
-        if ((body1 instanceof Lucio && body2 instanceof Door && isOpen)||(body2 instanceof Lucio && body1 instanceof Door && isOpen)) {
+
+    public boolean handleLucioDoor() {
+        if ((body1 instanceof Lucio && body2 instanceof Door && isOpen) || (body2 instanceof Lucio && body1 instanceof Door && isOpen)) {
 
             room++;
-            game.lucio = new Lucio(5, 11, physicWorld);
+            game.lucio = new Lucio(5, 11, game.physicWorld,game.keyEventHandler);
             physicWorld.removeAllBodies();
             physicWorld.addBody(game.lucio);
             Rooms.roomchanges(room, physicWorld);
-            Images.bgp =Images.LVL2;
-            ExitLight.e =55;
-
+            Images.bgp = Images.LVL2;
+            ExitLight.e = 55;
 
 
             return false;
@@ -74,8 +74,9 @@ public class Collision {
         return true;
 
     }
-    public Boolean handleCubeButton() {
-        if ((body1 instanceof CompanianCube && body2 instanceof Button) ||(body2 instanceof CompanianCube && body1 instanceof Button)){
+
+    public boolean handleCubeButton() {
+        if ((body1 instanceof CompanianCube && body2 instanceof Button) || (body2 instanceof CompanianCube && body1 instanceof Button)) {
             System.out.println("activ");
 
             exitLight.image = Images.LIGHTON;
@@ -88,12 +89,14 @@ public class Collision {
 
 
     }
-    public Boolean handleLucioLaser() {
+
+    public boolean handleLucioLaser() {
 
         if (body1 instanceof Lucio && body2 instanceof Laser) {
             healthBar.life--;
+            game.lucio = new Lucio(5, 11, game.physicWorld,game.keyEventHandler);
 
-            game.lucio = new Lucio(5, 11, physicWorld);
+
             physicWorld.removeBody(body1);
             physicWorld.addBody(game.lucio);
 
@@ -101,17 +104,19 @@ public class Collision {
         }
 
         if (body2 instanceof Lucio && body1 instanceof Coin) {
-            physicWorld.removeBody(body1);
+            healthBar.life--;
+            game.lucio = new Lucio(5, 11, game.physicWorld,game.keyEventHandler);
 
 
-            game.lucio = new Lucio(5, 11, physicWorld);
+
             physicWorld.removeBody(body2);
             physicWorld.addBody(game.lucio);
 
             return false;
         }
+
         return true;
     }
 
-    }
+}
 

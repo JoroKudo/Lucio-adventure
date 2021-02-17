@@ -47,6 +47,9 @@ public class Images {
             throw new RuntimeException("File not found: " + imagePath);
         }
     }
+    private static Image getBGP() {
+        return bgp;
+    }
 
 
 

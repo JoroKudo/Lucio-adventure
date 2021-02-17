@@ -1,20 +1,17 @@
 package LucioAbenteuer.gui;
 
+import LucioAbenteuer.*;
 import LucioAbenteuer.common.BaseScene;
 import LucioAbenteuer.common.FancyAnimationTimer;
 import LucioAbenteuer.common.Initializable;
 import LucioAbenteuer.common.Navigator;
-import LucioAbenteuer.KeyEventHandler;
-import LucioAbenteuer.MusicType;
-import LucioAbenteuer.Sound;
-import LucioAbenteuer.Game;
 
 public class GameScene extends BaseScene implements Initializable {
 
     private FancyAnimationTimer gameLoop;
 
     public GameScene(Navigator navigator){
-        super(navigator);
+        super(navigator, Images.LVL1);;
     }
 
     @Override
@@ -26,14 +23,16 @@ public class GameScene extends BaseScene implements Initializable {
         this.setOnKeyReleased(keyEventHandler);
 
         Sound.play(MusicType.BACKGROUND);
+        //gc.drawImage(Images.bgp, 0, 0);
 
         Game game = new Game(keyEventHandler, navigator, () -> gameLoop.stop());
-
+        game.load();
 
         gameLoop = new FancyAnimationTimer() {
             @Override
             public void doHandle(double deltaInSec) {
-                game.update(deltaInSec);
+                game.update(deltaInSec)
+                ;
                 game.draw(canvas.getGraphicsContext2D());
             }
         };

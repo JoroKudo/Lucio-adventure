@@ -9,6 +9,10 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
     private boolean isRightKeyPressed = false;
     private boolean isSpaceKeyPressed = false;
 
+    private boolean isLeftKeyReleased = true;
+    private boolean isRightKeyReleased = true;
+    private boolean isSpaceKeyReleased = true;
+
     @Override
     public void handle(KeyEvent event) {
         boolean pressed = event.getEventType() == KeyEvent.KEY_PRESSED;
@@ -23,6 +27,18 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
                 isSpaceKeyPressed = pressed;
                 break;
         }
+        boolean released = event.getEventType() == KeyEvent.KEY_RELEASED;
+        switch (event.getCode()) {
+            case A:
+                isLeftKeyReleased = released;
+                break;
+            case D:
+                isRightKeyReleased = released;
+                break;
+            case SPACE:
+                isSpaceKeyReleased = released;
+                break;
+        }
     }
 
     public boolean isLeftKeyPressed() {
@@ -35,5 +51,17 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
 
     public boolean isSpaceKeyPressed() {
         return isSpaceKeyPressed;
+    }
+
+    public boolean isLeftKeyReleased() {
+        return isLeftKeyReleased;
+    }
+
+    public boolean isRightKeyReleased() {
+        return isRightKeyReleased;
+    }
+
+    public boolean isSpaceKeyReleased() {
+        return isSpaceKeyReleased;
     }
 }
