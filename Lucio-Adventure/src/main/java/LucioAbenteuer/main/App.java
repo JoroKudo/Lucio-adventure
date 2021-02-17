@@ -7,6 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.dyn4j.dynamics.BodyFixture;
@@ -22,13 +23,13 @@ import javafx.scene.paint.Color;
 
 public class App extends Application {
 
-    private final World<Body> physicWorld = new World<>();
-    private Score score = new Score();
-    private ExitLight exitLight = new ExitLight();
-    private HealthBar healthBar = new HealthBar();
-    public  Lucio lucio = new Lucio(11, 11, physicWorld);
-    private Collision collisioner  = new Collision(this);
-    private boolean isOpen = false;
+    public final World<Body> physicWorld = new World<>();
+
+
+    public Lucio lucio = new Lucio(11, 11, physicWorld);
+    public Collision collisioner  = new Collision(this);
+
+
 
 
     private GraphicsContext gc;
@@ -36,6 +37,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        Sound.play(MusicType.BACKGROUND);
 
         Group root = new Group();
         Canvas canvas = new Canvas(Const.CANVAS_WIDTH, Const.CANVAS_HEIGHT);
@@ -122,9 +124,10 @@ public class App extends Application {
             @Override
             protected void doHandle(double elapsedTime) {
                 physicWorld.update(elapsedTime);
-                gc.drawImage(Images.GAME_BACKGROUND, 0, 0);
+                gc.drawImage(Images.bgp, 0, 0);
                 lucio.getTransform().setRotation(0);
                 lucio.update();
+
 
 
 
@@ -133,9 +136,9 @@ public class App extends Application {
                     GameObject gameObject = (GameObject) body;
                     gameObject.draw(gc);
                 }
-                score.draw(gc);
-                exitLight.draw(gc);
-                healthBar.draw(gc);
+                collisioner.score.draw(gc);
+                collisioner.exitLight.draw(gc);
+                collisioner.healthBar.draw(gc);
 
             }
         };

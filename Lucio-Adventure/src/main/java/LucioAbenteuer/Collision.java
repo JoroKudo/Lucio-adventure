@@ -12,12 +12,13 @@ public class Collision {
     public Collision(App app) {
         this.app = app;
     }
-
-    private Score score = new Score();
-    private ExitLight exitLight = new ExitLight();
-    private HealthBar healthBar = new HealthBar();
     private App app;
-    private boolean isOpen = false;
+
+    public Score score = new Score();
+    public ExitLight exitLight = new ExitLight();
+    public HealthBar healthBar = new HealthBar();
+
+    private boolean isOpen = true;
     private int room = 1;
     private Body body1;
     private Body body2;
@@ -32,6 +33,7 @@ public class Collision {
         handleLucioCoin();
         handleLucioDoor();
         handleCubeButton();
+        handleLucioLaser();
 
     }
 
@@ -62,6 +64,9 @@ public class Collision {
             physicWorld.removeAllBodies();
             physicWorld.addBody(app.lucio);
             Rooms.roomchanges(room, physicWorld);
+            Images.bgp =Images.LVL2;
+            ExitLight.e =55;
+
 
 
             return false;
@@ -82,6 +87,30 @@ public class Collision {
         return true;
 
 
+    }
+    public Boolean handleLucioLaser() {
+
+        if (body1 instanceof Lucio && body2 instanceof Laser) {
+            healthBar.life--;
+
+            app.lucio = new Lucio(5, 11, physicWorld);
+            physicWorld.removeBody(body1);
+            physicWorld.addBody(app.lucio);
+
+            return false;
+        }
+
+        if (body2 instanceof Lucio && body1 instanceof Coin) {
+            physicWorld.removeBody(body1);
+
+
+            app.lucio = new Lucio(5, 11, physicWorld);
+            physicWorld.removeBody(body2);
+            physicWorld.addBody(app.lucio);
+
+            return false;
+        }
+        return true;
     }
 
     }

@@ -10,9 +10,7 @@ import org.dyn4j.geometry.Polygon;
 import org.dyn4j.geometry.Rectangle;
 
 public class ExitLight {
-    public ExitLight() {
-        this.image = image;
-    }
+    public static int e = -70;
 
     public Image image = Images.LIGHTOFF;
 
@@ -23,7 +21,7 @@ public class ExitLight {
     public void draw(GraphicsContext gc) {
 
 
-        gc.drawImage(image, Const.CANVAS_WIDTH / 2 + 70, 100);
+        gc.drawImage(image, Const.CANVAS_WIDTH / 2 + e, 130);
 
     }
 }
