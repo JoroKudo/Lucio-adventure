@@ -13,8 +13,9 @@ public class Lucio extends GameObject {
     private World<Body> physicWorld;
     private Direction currentDirect = Direction.RIGHT;
     private final KeyEventHandler keyEventHandler;
-    private double shipBattery = 1;
-    public Vector2 max =new Vector2(-4, -0);
+    private double jumpCooldown = 1;
+
+
 
     public Lucio(double x, double y, World<Body> physicWorld, KeyEventHandler keyEventHandler) {
         super(Images.MARIORIGHT, x, y);
@@ -27,17 +28,9 @@ public class Lucio extends GameObject {
     }
 
 
-
-
     public void walkLeft() {
-
-
         currentDirect = Direction.LEFT;
-
-        setLinearVelocity(-4,getLinearVelocity().y);
-
-
-
+        setLinearVelocity(-4, getLinearVelocity().y);
     }
 
     public void walkRight() {
@@ -45,49 +38,48 @@ public class Lucio extends GameObject {
         currentDirect = Direction.RIGHT;
 
 
-        setLinearVelocity(4,getLinearVelocity().y);
+        setLinearVelocity(4, getLinearVelocity().y);
 
 
     }
 
-    public void handleNavigationEvents() {
+
+    public void flyDown() {
 
 
 
-        if (keyEventHandler.isRightKeyPressed() )
+
+        setLinearVelocity(0, 16 );
+
+
+    }
+
+    public void handleNavigationEvents(double deltaInSec) {
+
+
+        if (keyEventHandler.isRightKeyPressed())
             walkRight();
         if (keyEventHandler.isLeftKeyPressed())
             walkLeft();
-        if ((keyEventHandler.isRightKeyReleased()&&isOnGround())&&(keyEventHandler.isLeftKeyReleased()&&isOnGround() )){
-             setLinearVelocity(0,0);}
+        if (keyEventHandler.isDownKeyPressed())
+            flyDown();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if ((keyEventHandler.isRightKeyReleased() && isOnGround()) && (keyEventHandler.isLeftKeyReleased() && isOnGround())) {
+            setLinearVelocity(0, 0);
+        }
 
     }
+
     public void jump(double deltaInSec) {
         if (isOnGround()) {
-        if (keyEventHandler.isSpaceKeyPressed() && shipBattery > 1) {
-            applyForce(new Vector2(0, -1500));
-            shipBattery = 0;
-        } else {
-            shipBattery += 100*deltaInSec;
+            if (keyEventHandler.isSpaceKeyPressed() && jumpCooldown > 1) {
+                applyForce(new Vector2(0, -1500));
+                jumpCooldown = 0;
+            } else {
+                jumpCooldown += 100 * deltaInSec;
+            }
         }
-    }}
-
+    }
 
 
     public void update() {
@@ -95,10 +87,14 @@ public class Lucio extends GameObject {
     }
 
     private Image getCurrentImage() {
-        if (isOnGround() && (currentDirect == Direction.LEFT)) {
+        if (isOnGround() && (currentDirect == Direction.LEFT && getLinearVelocity().x == 0)) {
             return Images.MARIOLEFT;
-        } else if (isOnGround() && (currentDirect == Direction.RIGHT)) {
+        } else if (isOnGround() && (currentDirect == Direction.LEFT && getLinearVelocity().x < 0)) {
+            return Images.LUCIO_WALK_LEFT;
+        } else if (isOnGround() && (currentDirect == Direction.RIGHT && getLinearVelocity().x == 0)) {
             return Images.MARIORIGHT;
+        } else if (isOnGround() && (currentDirect == Direction.RIGHT && getLinearVelocity().x > 0)) {
+            return Images.LUCIO_WALK_RIGHT;
         } else if (!isOnGround() && (currentDirect == Direction.RIGHT)) {
             return Images.LUCIO_JUMP_RIGHT;
         } else if (!isOnGround() && (currentDirect == Direction.LEFT)) {
@@ -111,7 +107,7 @@ public class Lucio extends GameObject {
         for (Body body : physicWorld.getBodies()) {
             if (physicWorld.isInContact(this, body)) {
                 if (!(body instanceof Lucio)) {
-                    setLinearVelocity(getLinearVelocity().x,1);
+                    setLinearVelocity(getLinearVelocity().x, 0);
                     return true;
                 }
             }

@@ -27,7 +27,7 @@ public class Score {
         gc.setFont(new Font("consolas", 25));
         gc.setFill(Color.YELLOW);
         gc.fillText(
-                "YOU HAVE COLLECTED " + coinCounter +" COINS SO FAR",
+                "COINS: " + coinCounter ,
                 Math.round(Const.CANVAS_WIDTH/4),
                 Math.round(60)
 

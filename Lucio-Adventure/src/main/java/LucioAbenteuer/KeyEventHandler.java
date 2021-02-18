@@ -8,10 +8,15 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
     private boolean isLeftKeyPressed = false;
     private boolean isRightKeyPressed = false;
     private boolean isSpaceKeyPressed = false;
+    private boolean isUpKeyPressed = false;
+    private boolean isDownKeyPressed = false;
+
 
     private boolean isLeftKeyReleased = true;
     private boolean isRightKeyReleased = true;
     private boolean isSpaceKeyReleased = true;
+    private boolean isUpKeyReleased = true;
+    private boolean isDownKeyReleased = true;
 
     @Override
     public void handle(KeyEvent event) {
@@ -22,6 +27,12 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
                 break;
             case D:
                 isRightKeyPressed = pressed;
+                break;
+            case W:
+                isUpKeyPressed = pressed;
+                break;
+            case S:
+                isDownKeyPressed = pressed;
                 break;
             case SPACE:
                 isSpaceKeyPressed = pressed;
@@ -34,6 +45,12 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
                 break;
             case D:
                 isRightKeyReleased = released;
+                break;
+            case W:
+                isUpKeyReleased = pressed;
+                break;
+            case S:
+                isDownKeyReleased = pressed;
                 break;
             case SPACE:
                 isSpaceKeyReleased = released;
@@ -59,6 +76,22 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
 
     public boolean isRightKeyReleased() {
         return isRightKeyReleased;
+    }
+
+    public boolean isDownKeyPressed() {
+        return isDownKeyPressed;
+    }
+
+    public boolean isUpKeyPressed() {
+        return isUpKeyPressed;
+    }
+
+    public boolean isDownKeyReleased() {
+        return isDownKeyReleased;
+    }
+
+    public boolean isUpKeyReleased() {
+        return isUpKeyReleased;
     }
 
     public boolean isSpaceKeyReleased() {

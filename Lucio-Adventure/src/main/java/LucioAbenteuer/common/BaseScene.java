@@ -12,14 +12,14 @@ public abstract class BaseScene extends Scene {
     protected final Navigator navigator;
     protected final Canvas canvas;
 
-    public BaseScene(Navigator navigator) {
+    protected BaseScene(Navigator navigator) {
         super(new Group());
         this.navigator = navigator;
         canvas = new Canvas(Const.CANVAS_WIDTH, Const.CANVAS_HEIGHT);
         ((Group)getRoot()).getChildren().add(canvas);
     }
 
-    public BaseScene(Navigator navigator, Image backgroundImage) {
+    protected BaseScene(Navigator navigator, Image backgroundImage) {
         this(navigator);
         drawBackgroundImage(backgroundImage);
     }

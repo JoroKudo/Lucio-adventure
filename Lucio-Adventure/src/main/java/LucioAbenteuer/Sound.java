@@ -59,8 +59,12 @@ public class Sound {
         switch (soundEffect) {
             case HEAL:
                 return "Heart.mp3";
-            case SPACESHIP_EXPLODE:
-                return "Lucio_BGM.mp3";
+            case DOOR_OPEN:
+                return "DoorOpen.mp3";
+            case HURT:
+                return "Hurt.mp3";
+            case COIN:
+                return "Coin.mp3";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + soundEffect);
         }

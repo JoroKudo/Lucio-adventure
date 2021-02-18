@@ -8,7 +8,7 @@ import javafx.scene.input.KeyCode;
 public class GameWonScene extends BaseScene {
 
     public GameWonScene(Navigator navigator) {
-        super(navigator, Images.LVL1);
+        super(navigator, Images.WIN);
         setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.SPACE){
                 navigator.goTo(SceneType.WELCOME);

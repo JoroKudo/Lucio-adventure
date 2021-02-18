@@ -29,6 +29,7 @@ public abstract class GameObject extends Body {
         transform.appendTranslation(1, -1);
         gc.transform(transform);
 
+
         Polygon rect = (Polygon) this.getFixture(0).getShape();
         double x = rect.getVertices()[0].x + 0.5;
         double y = rect.getVertices()[0].y + 0.5;

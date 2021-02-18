@@ -1,7 +1,6 @@
 package LucioAbenteuer;
 
 
-
 import LucioAbenteuer.common.Navigator;
 import LucioAbenteuer.common.Util;
 import LucioAbenteuer.GameObjects.*;
@@ -28,13 +27,6 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
     public HealthBar healthBar;
 
 
-
-
-
-
-
-
-
     private GraphicsContext gc;
 
     private final Collision collisioner;
@@ -46,9 +38,9 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
         this.navigator = navigator;
 
     }
+
     public Lucio lucio;
-
-
+    public BallEnemy be;
 
 
     public void draw(GraphicsContext gc) {
@@ -60,19 +52,21 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
         }
 
 
-
         collisioner.score.draw(gc);
         collisioner.exitLight.draw(gc);
         collisioner.healthBar.draw(gc);
     }
-    public void load(){
+
+    public void load() {
         healthBar = collisioner.healthBar;
 
-        lucio = new Lucio(11, 11, physicWorld,keyEventHandler);
+        lucio = new Lucio(11, 11, physicWorld, keyEventHandler);
+        be = new BallEnemy(20, 11, physicWorld);
 
 
         physicWorld.setGravity(new Vector2(0, 15));
         physicWorld.addBody(lucio);
+
 
         for (Body body : Rooms.createRoom(Rooms.testRoom)) {
             physicWorld.addBody(body);
@@ -81,12 +75,10 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
         physicWorld.addCollisionListener(new CollisionListenerAdapter<>() {
             @Override
-            public boolean collision(BroadphaseCollisionData<Body, BodyFixture > collision) {
+            public boolean collision(BroadphaseCollisionData<Body, BodyFixture> collision) {
                 Body body1 = collision.getBody1();
                 Body body2 = collision.getBody2();
-                collisioner.handle(body1,body2,physicWorld);
-
-
+                collisioner.handle(body1, body2, physicWorld);
 
 
                 return true;
@@ -96,23 +88,30 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
         });
 
+
     }
 
-    public void update(double elapsedTime) {
-        physicWorld.update(elapsedTime);
-        lucio.handleNavigationEvents();
-        lucio.jump(elapsedTime);
 
+
+    public void update(double elapsedTime) {
+        collisioner.handleBallEnemyMovement(elapsedTime);
+        be.setLinearVelocity(be.x, be.getLinearVelocity().y);
+        physicWorld.update(elapsedTime);
+        lucio.handleNavigationEvents(elapsedTime);
+        lucio.jump(elapsedTime);
 
 
         lucio.getTransform().setRotation(0);
         lucio.update();
-        if (healthBar.life==0)
+        if (healthBar.life == 0) {
             navigator.goTo(SceneType.GAME_OVER);
+        }
+
+        if (collisioner.room == 6) {
+            navigator.goTo(SceneType.GAME_WON);
+        }
 
     }
-
-
 
 
     private void stop() {

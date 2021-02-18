@@ -1,5 +1,6 @@
 package LucioAbenteuer;
 
+import LucioAbenteuer.gui.SceneType;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.world.PhysicsWorld;
 import LucioAbenteuer.GameObjects.*;
@@ -12,7 +13,7 @@ public class Rooms {
 
 
     public static String room1 =
-                    "0000000000000L0000000000000000" +
+            "0000000000000L0000000000000000" +
                     "0000000000000L0000000000000000" +
                     "0000000000000L0000000000000000" +
                     "0000000000000L0000000000000000" +
@@ -30,7 +31,7 @@ public class Rooms {
                     "00F00000000000FF000000000000F0";
 
     public static String testRoom =
-                    "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
+            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
@@ -39,14 +40,67 @@ public class Rooms {
                     "W0000000000BBBBBBB00000000000W" +
                     "W00000000000C0C0C0C0000C00000W" +
                     "WBB0BBBB000000000000000000000W" +
+                    "W0000000000000000000000SSSS00W" +
+                    "W00000000000BBBBBBB0000BBBB00W" +
                     "W0000000000000000000000000000W" +
-                    "W00000000000BBBBBBB0000000000W" +
-                    "W00000000000000000000000R0000W" +
-                    "W0000H00000000000000000000000W" +
-                    "W0000000000000000HHH000000000W" +
-                    "W0K00000000000000000000000000W"+
-                    "WBBB0000000000000FF0000000000W" ;
+                    "W000000000R000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0K00000000000000000000000000W" +
+                    "WBBB0000000000000FF0000000000W";
 
+    public static String room2 =
+            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "WC0000C0000000D00000000000000W" +
+                    "W0000000000BBBBBBB00000000000W" +
+                    "W00000000000C0C0C0C0000C00000W" +
+                    "WBB0BBBB000000000000000000000W" +
+                    "W0000000000000000000000SSSS00W" +
+                    "W00000000000BBBBBBB0000BBBB00W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W000000000000000000000000S000W" +
+                    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+
+    public static String room3 =
+            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "WC0000C0000000D00000000000000W" +
+                    "W0000000000BBBBBBB00000000000W" +
+                    "W00000000000C0C0C0C0000C00000W" +
+                    "WBB0BBBB000000000000000000000W" +
+                    "W0000000000000000000000SSSS00W" +
+                    "W00000000000BBBBBBB0000BBBB00W" +
+                    "W0000000000000000000000000000W" +
+                    "W000000000R000000000000000000W" +
+                    "W0000000000000000HHH000000000W" +
+                    "W0K00000000000000000000000000W" +
+                    "000000000000000000000000000000";
+
+    public static String room4 =
+            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W000000D000000000000000000000W" +
+                    "WC00BBBBBBB000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W00000000000C0C0C0C0000C00000W" +
+                    "WBB0BBBB000000000000000000000W" +
+                    "W000000000000000000000000R000W" +
+                    "W00000000BBBBBB00000B00BBBB00W" +
+                    "W0000000000000000000B00B00000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0K0SSSSSSSSSSSSSSSSSSSSSSSSSW" +
+                    "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 
 
     public static List<Body> createRoom(String roomname) {
@@ -59,6 +113,8 @@ public class Rooms {
             switch (symb) {
                 case 'B' -> bodiesFromRoom.add(new Block(x, y));
                 case 'W' -> bodiesFromRoom.add(new Wall(x, y));
+                case 'S' -> bodiesFromRoom.add(new Spikes(x, y));
+
 
 
                 case 'C' -> bodiesFromRoom.add(new Coin(x, y));
@@ -72,6 +128,7 @@ public class Rooms {
 
 
 
+
                 case 'R' -> bodiesFromRoom.add(new CompanianCube(x, y));
                 case 'K' -> bodiesFromRoom.add(new Button(x, y));
                 case 'L' -> bodiesFromRoom.add(new Laser(x, y));
@@ -81,7 +138,8 @@ public class Rooms {
         }
         return bodiesFromRoom;
     }
-    public static  void roomchanges(int room, World<Body> physicWorld) {
+
+    public static void roomchanges(int room, World<Body> physicWorld) {
 
 
         switch (room) {
@@ -94,10 +152,31 @@ public class Rooms {
             case 2:
                 for (Body body : Rooms.createRoom(Rooms.room1)) {
                     physicWorld.addBody(body);
+                    Images.bgp = Images.LVL2;
+
+
                 }
 
-
                 break;
+            case 3:
+                for (Body body : Rooms.createRoom(Rooms.room2)) {
+                    physicWorld.addBody(body);
+                    Images.bgp = Images.LVL3;
+
+
+                }
+                break;
+            case 4:
+                for (Body body : Rooms.createRoom(Rooms.room3)) {
+                    physicWorld.addBody(body);
+                }
+                break;
+            case 5:
+                for (Body body : Rooms.createRoom(Rooms.room4)) {
+                    physicWorld.addBody(body);
+                }
+                break;
+
 
         }
 

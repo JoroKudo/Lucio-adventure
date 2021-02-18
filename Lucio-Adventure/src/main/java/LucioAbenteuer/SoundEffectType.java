@@ -1,6 +1,8 @@
 package LucioAbenteuer;
 
 public enum SoundEffectType {
-	SPACESHIP_EXPLODE,
+	DOOR_OPEN,
 	HEAL,
+	HURT,
+	COIN,
 }
