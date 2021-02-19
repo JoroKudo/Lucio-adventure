@@ -36,28 +36,27 @@ public class Images {
     public final static Image SPIKES = getImageSize("Spikes.png");
 
 
-
     public static Image bgp = Images.LVL1;
 
-    private static Image getImage(String imagePath,double height, double width) {
+    private static Image getImage(String imagePath, double height, double width) {
         try {
-            return new Image("/Images/" + imagePath,width,height,false,false);
-        } catch (Exception ex){
+            return new Image("/Images/" + imagePath, width, height, false, false);
+        } catch (Exception ex) {
             throw new RuntimeException("File not found: " + imagePath);
         }
     }
+
     private static Image getImageSize(String imagePath) {
         try {
-            Image wimg =new Image("/Images/" + imagePath);
-            double h =wimg.getHeight()*(Const.BLOCK_SIZE/50);
-            double w=wimg.getWidth()*(Const.BLOCK_SIZE/50);
+            Image wimg = new Image("/Images/" + imagePath);
+            double h = wimg.getHeight() * (Const.BLOCK_SIZE / 50);
+            double w = wimg.getWidth() * (Const.BLOCK_SIZE / 50);
 
-            return getImage(imagePath,h,w);
-        } catch (Exception ex){
+            return getImage(imagePath, h, w);
+        } catch (Exception ex) {
             throw new RuntimeException("File not found: " + imagePath);
         }
     }
-
 
 
 }

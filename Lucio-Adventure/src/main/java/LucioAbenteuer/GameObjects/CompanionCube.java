@@ -1,4 +1,5 @@
 package LucioAbenteuer.GameObjects;
+
 import LucioAbenteuer.*;
 import org.dyn4j.geometry.MassType;
 
@@ -8,7 +9,6 @@ public class CompanionCube extends GameObject {
 
 
         setMass(MassType.FIXED_ANGULAR_VELOCITY);
-
 
 
     }

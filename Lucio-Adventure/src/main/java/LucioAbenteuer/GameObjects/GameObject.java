@@ -12,7 +12,7 @@ public abstract class GameObject extends Body {
 
     protected Image image;
 
-    public GameObject(Image image, double x, double y)  {
+    public GameObject(Image image, double x, double y) {
         this.image = image;
         this.translate(x, y);
 
@@ -29,12 +29,11 @@ public abstract class GameObject extends Body {
         transform.appendTranslation(1, -1);
         gc.transform(transform);
 
-
         Polygon rect = (Polygon) this.getFixture(0).getShape();
         double x = rect.getVertices()[0].x + 0.5;
         double y = rect.getVertices()[0].y + 0.5;
 
-        gc.drawImage(image, x * Const.BLOCK_SIZE , y * Const.BLOCK_SIZE);
+        gc.drawImage(image, x * Const.BLOCK_SIZE, y * Const.BLOCK_SIZE);
         gc.setTransform(originTrans);
     }
 }

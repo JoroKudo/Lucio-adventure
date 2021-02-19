@@ -3,28 +3,25 @@ package LucioAbenteuer;
 
 import LucioAbenteuer.GameObjects.*;
 import org.dyn4j.dynamics.Body;
+import org.dyn4j.geometry.Vector2;
 import org.dyn4j.world.World;
 
 public class CollisionDetector {
 
-    public CollisionDetector(Game game) {
-        this.game = game;
-    }
-
-    private final Game game;
-
-    public Score score = new Score();
-
-    public HealthBar healthBar = new HealthBar();
-
+    private final Facility facility;
+    private final Score score;
+    public  HealthBar healthBar;
     private boolean isOpen = true;
-    public int room = 1;
     private Body body1;
     private Body body2;
     private World<Body> physicWorld;
     private boolean playSoundOnce = true;
 
-
+    public CollisionDetector(Facility facility, Score score, HealthBar healthBar) {
+        this.facility = facility;
+        this.score = score;
+        this.healthBar = healthBar;
+    }
 
     public void handle(Body body1, Body body2, World<Body> physicWorld) {
         this.physicWorld = physicWorld;
@@ -36,6 +33,7 @@ public class CollisionDetector {
         handleLucioPain();
         handleLucioHeart();
         handleLucioKey();
+        handleCubeLaser();
 
 
     }
@@ -43,18 +41,10 @@ public class CollisionDetector {
     public void handleLucioCoin() {
 
         if (body1 instanceof Lucio && body2 instanceof Coin) {
-            physicWorld.removeBody(body2);
-            Sound.play(SoundEffectType.COIN);
-            score.coinCounter++;
+            Coin coin;
+            coin = (Coin) body2;
+            score.coinCounter = coin.collect(body2,physicWorld,score.coinCounter);
 
-            return;
-        }
-
-        if (body2 instanceof Lucio && body1 instanceof Coin) {
-            physicWorld.removeBody(body1);
-            Sound.play(SoundEffectType.COIN);
-
-            score.coinCounter++;
 
         }
     }
@@ -63,24 +53,9 @@ public class CollisionDetector {
     public void handleLucioKey() {
 
         if (body1 instanceof Lucio && body2 instanceof Key) {
-            physicWorld.removeBody(body2);
-            Sound.play(SoundEffectType.KEY);
-
-            isOpen = true;
-            Rooms.exitlight
-                    .image = Images.LIGHTON;
-
-            return;
-        }
-
-        if (body2 instanceof Lucio && body1 instanceof Key) {
-            physicWorld.removeBody(body1);
-            Sound.play(SoundEffectType.KEY);
-
-
-            isOpen = true;
-            Rooms.exitlight
-                    .image = Images.LIGHTON;
+            Key key;
+            key = (Key) body2;
+            isOpen =key.open(body2,physicWorld,isOpen);
 
         }
     }
@@ -89,42 +64,22 @@ public class CollisionDetector {
 
 
         if (body1 instanceof Lucio && body2 instanceof Heart) {
-            physicWorld.removeBody(body2);
-            if (healthBar.life != 3) {
-
-
-                healthBar.life++;
-            }
-            Sound.play(SoundEffectType.HEAL);
-            return;
-        }
-
-        if (body2 instanceof Lucio && body1 instanceof Heart) {
-            physicWorld.removeBody(body1);
-
-            if (healthBar.life != 3) {
-
-
-                healthBar.life++;
-            }
-            Sound.play(SoundEffectType.HEAL);
-
+            Heart heart;
+            heart = (Heart) body2;
+            healthBar.life = heart.heal(body2,physicWorld,healthBar.life);
 
         }
+
+
     }
 
     public void handleLucioDoor() {
-        if ((body1 instanceof Lucio && body2 instanceof Door && isOpen) || (body2 instanceof Lucio && body1 instanceof Door && isOpen)) {
+        if ((body1 instanceof Lucio && body2 instanceof Door && isOpen)) {
+            Door door;
+            door = (Door) body2;
+            isOpen =door.leave(body2,physicWorld,isOpen,facility);
 
-            room++;
-            game.lucio = new Lucio(11, 7, game.physicWorld, game.keyEventHandler);
 
-
-            physicWorld.removeAllBodies();
-            physicWorld.addBody(game.lucio);
-            isOpen = false;
-
-            Rooms.roomchanges(room, physicWorld);
 
 
         }
@@ -153,62 +108,58 @@ public class CollisionDetector {
     public void handleLucioPain() {
 
         if (body1 instanceof Lucio && body2 instanceof Laser || body2 instanceof Spikes && body1 instanceof Lucio) {
-            game.lucio = new Lucio(11, 7, game.physicWorld, game.keyEventHandler);
+            facility.lucio = new Lucio(11, 7, facility.physicWorld, facility.keyEventHandler);
             healthBar.life--;
-
-
 
 
             physicWorld.removeBody(body1);
 
-            if (healthBar.life > 0 ){
-                Sound.play(SoundEffectType.HURT);}
-            physicWorld.addBody(game.lucio);
+            if (healthBar.life > 0) {
+                Sound.play(SoundEffectType.HURT);
+            }
+            physicWorld.addBody(facility.lucio);
 
 
 
-
-            return;
         }
 
 
-
         if (body2 instanceof Lucio && body1 instanceof Laser || body1 instanceof Spikes && body2 instanceof Lucio) {
-            game.lucio = new Lucio(11, 7, game.physicWorld, game.keyEventHandler);
+            facility.lucio = new Lucio(11, 7, facility.physicWorld, facility.keyEventHandler);
 
             healthBar.life--;
 
 
             physicWorld.removeBody(body2);
-            physicWorld.addBody(game.lucio);
-            if (healthBar.life == 0 ){
-                Sound.stop(SoundEffectType.HURT);}
+            physicWorld.addBody(facility.lucio);
+            if (healthBar.life == 0) {
+                Sound.stop(SoundEffectType.HURT);
+            }
 
         }
 
     }
+
     public boolean handleCubeLaser() {
 
         if (body1 instanceof CompanionCube && body2 instanceof Laser) {
+            CompanionCube companionCube;
+            companionCube = (CompanionCube) body1;
+            companionCube.shift(new Vector2(companionCube.getLinearVelocity().x, 0));
 
 
 
 
-
-
-            physicWorld.removeBody(body1);
-
-            if (healthBar.life > 0 ){
+            if (healthBar.life > 0) {
                 Sound.play(SoundEffectType.HURT);
             }
-            physicWorld.addBody(game.lucio);
-
-
+            physicWorld.addBody(facility.lucio);
 
 
             return false;
         }
-        return true;}
+        return true;
+    }
 
 
 }

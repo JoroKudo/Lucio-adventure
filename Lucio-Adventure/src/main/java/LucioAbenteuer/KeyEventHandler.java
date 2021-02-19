@@ -10,7 +10,6 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
     private boolean isSpaceKeyPressed = false;
 
 
-
     private boolean isLeftKeyReleased = true;
     private boolean isRightKeyReleased = true;
 

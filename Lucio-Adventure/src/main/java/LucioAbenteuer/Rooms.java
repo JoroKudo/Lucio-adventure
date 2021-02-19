@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Rooms {
     public static ExitLight exitlight;
+    public static int room =1;
 
 
     public static String room1 =
@@ -35,14 +36,14 @@ public class Rooms {
                     "0000000000000L0000000000000000" +
                     "0000000000000L0000000000000000" +
                     "0000K00000000L0000000000000000" +
-                    "0000000000000L0000000000000000" +
-                    "00K0000000000L000D000000000000" +
-                    "0CBBB0000C000L00BBB00000000000" +
+                    "0000000000000L0R00000000000000" +
+                    "00K0000000000L0000000000000000" +
+                    "0CBBB0000C000LBBBBB00000000000" +
                     "0000000000000LBBBBBBB000000000" +
                     "00000000000B0L0C0C0C0C0C000000" +
-                    "BBB0000BBBBB0L0000000000000000" +
-                    "0000000000000L000000000000000C" +
-                    "0000000000000BBBBBBBBBBBB00000" +
+                    "0000000BBBBB0L0000000000000000" +
+                    "00000P0000000L000000000000000C" +
+                    "0000BBB000000BBBBBBBBBBBB00000" +
                     "000000000000000000000000000000" +
                     "W0000000000000000HHH000000000W" +
                     "W0000000000000000000000000000W" +
@@ -117,17 +118,16 @@ public class Rooms {
                 case 'S' -> bodiesFromRoom.add(new Spikes(x, y));
                 case 'C' -> bodiesFromRoom.add(new Coin(x, y));
                 case 'F' -> bodiesFromRoom.add(new Floor(x, y));
-                case 'D' -> {
-                    bodiesFromRoom.add(new Door(x, y));
-                    exitlight = new ExitLight((x - 0.4) * Const.BLOCK_SIZE, (y - 2) * Const.BLOCK_SIZE);
-                }
-
-
                 case 'H' -> bodiesFromRoom.add(new Heart(x, y));
                 case 'R' -> bodiesFromRoom.add(new CompanionCube(x, y));
                 case 'P' -> bodiesFromRoom.add(new Button(x, y));
                 case 'L' -> bodiesFromRoom.add(new Laser(x, y));
                 case 'K' -> bodiesFromRoom.add(new Key(x, y));
+                case 'D' -> {
+                    bodiesFromRoom.add(new Door(x, y));
+                    exitlight = new ExitLight((x - 0.4) * Const.BLOCK_SIZE, (y - 2) * Const.BLOCK_SIZE);
+                }
+
 
 
             }

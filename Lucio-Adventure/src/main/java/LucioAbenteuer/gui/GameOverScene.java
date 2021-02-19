@@ -14,7 +14,7 @@ public class GameOverScene extends BaseScene implements Initializable {
         super(navigator, Images.GAMEOVER);
 
         setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE){
+            if (e.getCode() == KeyCode.SPACE) {
                 navigator.goTo(SceneType.WELCOME);
             }
         });

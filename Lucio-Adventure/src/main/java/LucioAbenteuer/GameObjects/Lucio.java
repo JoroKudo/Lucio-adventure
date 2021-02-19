@@ -16,7 +16,6 @@ public class Lucio extends GameObject {
     private double jumpCooldown = 1;
 
 
-
     public Lucio(double x, double y, World<Body> physicWorld, KeyEventHandler keyEventHandler) {
         super(Images.MARIORIGHT, x, y);
         this.physicWorld = physicWorld;
@@ -44,8 +43,6 @@ public class Lucio extends GameObject {
     }
 
 
-
-
     public void handleNavigationEvents() {
 
 
@@ -71,7 +68,6 @@ public class Lucio extends GameObject {
             }
         }
     }
-
 
     public void update() {
         image = getCurrentImage();

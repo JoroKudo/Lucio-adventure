@@ -16,7 +16,7 @@ public abstract class BaseScene extends Scene {
         super(new Group());
         this.navigator = navigator;
         canvas = new Canvas(Const.CANVAS_WIDTH, Const.CANVAS_HEIGHT);
-        ((Group)getRoot()).getChildren().add(canvas);
+        ((Group) getRoot()).getChildren().add(canvas);
     }
 
     protected BaseScene(Navigator navigator, Image backgroundImage) {
@@ -24,12 +24,10 @@ public abstract class BaseScene extends Scene {
         drawBackgroundImage(backgroundImage);
     }
 
-    private void drawBackgroundImage(Image backgroundImage){
+    private void drawBackgroundImage(Image backgroundImage) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.drawImage(backgroundImage, 0, 0);
     }
-
-
 
 
 }

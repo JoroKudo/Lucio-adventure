@@ -20,7 +20,7 @@ public class ExitLight {
     public void draw(GraphicsContext gc) {
 
 
-        gc.drawImage(image, x , y);
+        gc.drawImage(image, x, y);
 
     }
 }

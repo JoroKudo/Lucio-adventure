@@ -8,7 +8,7 @@ import LucioAbenteuer.common.Navigator;
 
 public class GameScene extends BaseScene implements Initializable {
 
-    public GameScene(Navigator navigator){
+    public GameScene(Navigator navigator) {
         super(navigator, Images.LVL1);
     }
 
@@ -23,15 +23,15 @@ public class GameScene extends BaseScene implements Initializable {
         Sound.play(MusicType.BACKGROUND);
         //gc.drawImage(Images.bgp, 0, 0);
 
-        Game game = new Game(keyEventHandler, navigator);
-        game.load();
+        Facility facility = new Facility(keyEventHandler, navigator);
+        facility.load();
 
         FancyAnimationTimer gameLoop = new FancyAnimationTimer() {
             @Override
             public void doHandle(double deltaInSec) {
-                game.update(deltaInSec)
+                facility.update(deltaInSec)
                 ;
-                game.draw(canvas.getGraphicsContext2D());
+                facility.draw(canvas.getGraphicsContext2D());
             }
         };
         gameLoop.start();
