@@ -2,11 +2,9 @@ package LucioAbenteuer;
 
 
 import LucioAbenteuer.common.Navigator;
-import LucioAbenteuer.common.Util;
 import LucioAbenteuer.GameObjects.*;
 import LucioAbenteuer.gui.SceneType;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.dynamics.BodyFixture;
 import org.dyn4j.geometry.Vector2;
@@ -15,7 +13,6 @@ import org.dyn4j.world.World;
 import org.dyn4j.world.BroadphaseCollisionData;
 import org.dyn4j.world.listener.CollisionListenerAdapter;
 
-import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Game extends CopyOnWriteArrayList<GameObject> {
@@ -29,18 +26,18 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
     private GraphicsContext gc;
 
-    private final Collision collisioner;
+    private final CollisionDetector collisioner;
 
     public Game(KeyEventHandler keyEventHandler, Navigator navigator, Runnable gameLoopStopper) {
         this.keyEventHandler = keyEventHandler;
         this.gameLoopStopper = gameLoopStopper;
-        this.collisioner = new Collision(this);
+        this.collisioner = new CollisionDetector(this);
         this.navigator = navigator;
 
     }
 
     public Lucio lucio;
-    public BallEnemy be;
+
 
 
     public void draw(GraphicsContext gc) {
@@ -53,22 +50,22 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
 
         collisioner.score.draw(gc);
-        collisioner.exitLight.draw(gc);
+        Rooms.exitlight.draw(gc);
         collisioner.healthBar.draw(gc);
     }
 
     public void load() {
         healthBar = collisioner.healthBar;
 
-        lucio = new Lucio(11, 11, physicWorld, keyEventHandler);
-        be = new BallEnemy(20, 11, physicWorld);
+        lucio = new Lucio(10, 11, physicWorld, keyEventHandler);
+
 
 
         physicWorld.setGravity(new Vector2(0, 15));
         physicWorld.addBody(lucio);
 
 
-        for (Body body : Rooms.createRoom(Rooms.testRoom)) {
+        for (Body body : Rooms.createRoom(Rooms.room4)) {
             physicWorld.addBody(body);
         }
 
@@ -94,8 +91,8 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
 
     public void update(double elapsedTime) {
-        collisioner.handleBallEnemyMovement(elapsedTime);
-        be.setLinearVelocity(be.x, be.getLinearVelocity().y);
+
+
         physicWorld.update(elapsedTime);
         lucio.handleNavigationEvents(elapsedTime);
         lucio.jump(elapsedTime);
@@ -108,6 +105,7 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
         }
 
         if (collisioner.room == 6) {
+            collisioner.room = 1;
             navigator.goTo(SceneType.GAME_WON);
         }
 

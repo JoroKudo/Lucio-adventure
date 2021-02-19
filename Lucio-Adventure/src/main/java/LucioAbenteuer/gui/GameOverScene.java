@@ -24,6 +24,7 @@ public class GameOverScene extends BaseScene implements Initializable {
     @Override
     public void onInitialize() {
         Sound.stop(MusicType.BACKGROUND);
-        Sound.play(SoundEffectType.HEAL);
+        Sound.play(MusicType.GAME_OVER);
+
     }
 }

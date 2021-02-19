@@ -14,6 +14,7 @@ public class Sound {
     // Need to be a Instance-Variable for the music,
     // else the Garbage Collector stop the music.
     private static MediaPlayer musicPlayer;
+    private static MediaPlayer effectPlayer;
     private final static Map<String, Media> cache = new HashMap<>();
 
     public static void play(MusicType music) {
@@ -35,13 +36,20 @@ public class Sound {
     }
 
     public static void play(SoundEffectType soundEffect) {
-        MediaPlayer player = createMediaPlayer(getSoundFileName(soundEffect));
-        player.play();
+        effectPlayer= createMediaPlayer(getSoundFileName(soundEffect));
+        effectPlayer.play();
+    }
+    public static void stop(SoundEffectType soundEffect) {
+        if (effectPlayer != null) {
+            effectPlayer.stop();
+        }
+        effectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
+        effectPlayer.stop();
     }
 
 
     private static MediaPlayer createMediaPlayer(String filePath) {
-        filePath = "/" + filePath;
+        filePath = "/Sound/" + filePath;
 
         if (!cache.containsKey(filePath)) {
             URL url = Sound.class.getResource(filePath);
@@ -65,6 +73,8 @@ public class Sound {
                 return "Hurt.mp3";
             case COIN:
                 return "Coin.mp3";
+            case KEY:
+                return "Key.mp3";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + soundEffect);
         }
@@ -76,6 +86,8 @@ public class Sound {
                 return "Lucio_BGM.mp3";
             case INTRO:
                 return "MainMenu.wav";
+            case GAME_OVER:
+                return "gameOver.mp3";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + music);
         }

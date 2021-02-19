@@ -6,6 +6,10 @@ public class CompanianCube extends GameObject {
     public CompanianCube(double x, double y) {
         super(Images.COMPANIAN, x, y);
 
-        setMass(MassType.NORMAL);
+
+        setMass(MassType.FIXED_ANGULAR_VELOCITY);
+
+
+
     }
 }

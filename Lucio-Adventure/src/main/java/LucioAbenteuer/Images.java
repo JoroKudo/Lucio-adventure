@@ -14,9 +14,11 @@ public class Images {
     public final static Image LUCIO_WALK_RIGHT = getImageSize("LucioWalkR.gif");
     public final static Image FLOOR = getImageSize("Floor.png");
     public final static Image COIN = getImageSize("coin.gif");
+    public final static Image KEY = getImageSize("Key.png");
     public final static Image LVL1 = getImageSize("Chamb1.png");
     public final static Image LVL2 = getImageSize("Chamb2.png");
     public final static Image LVL3 = getImageSize("Chamb3.png");
+    public final static Image LVL4 = getImageSize("Chamb4.png");
     public final static Image WIN = getImageSize("win.png");
     public final static Image BLOCK = getImageSize("Block.png");
     public final static Image WALL = getImageSize("Wall.png");
@@ -32,21 +34,21 @@ public class Images {
     public final static Image LASER_BEAM = getImageSize("LaserBeam.png");
     public final static Image GAMEOVER = getImageSize("GameOver.png");
     public final static Image SPIKES = getImageSize("Spikes.png");
-    public final static Image BALL_ENEMY = getImageSize("BallEnemy.png");
+
 
 
     public static Image bgp = Images.LVL1;
 
     private static Image getImage(String imagePath,double height, double width) {
         try {
-            return new Image("/" + imagePath,width,height,false,false);
+            return new Image("/Images/" + imagePath,width,height,false,false);
         } catch (Exception ex){
             throw new RuntimeException("File not found: " + imagePath);
         }
     }
     private static Image getImageSize(String imagePath) {
         try {
-            Image wimg =new Image("/" + imagePath);
+            Image wimg =new Image("/Images/" + imagePath);
             double h =wimg.getHeight()*(Const.BLOCK_SIZE/50);
             double w=wimg.getWidth()*(Const.BLOCK_SIZE/50);
 

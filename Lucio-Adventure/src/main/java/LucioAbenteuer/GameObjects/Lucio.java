@@ -44,15 +44,7 @@ public class Lucio extends GameObject {
     }
 
 
-    public void flyDown() {
 
-
-
-
-        setLinearVelocity(0, 16 );
-
-
-    }
 
     public void handleNavigationEvents(double deltaInSec) {
 
@@ -61,8 +53,7 @@ public class Lucio extends GameObject {
             walkRight();
         if (keyEventHandler.isLeftKeyPressed())
             walkLeft();
-        if (keyEventHandler.isDownKeyPressed())
-            flyDown();
+
 
         if ((keyEventHandler.isRightKeyReleased() && isOnGround()) && (keyEventHandler.isLeftKeyReleased() && isOnGround())) {
             setLinearVelocity(0, 0);
@@ -73,7 +64,7 @@ public class Lucio extends GameObject {
     public void jump(double deltaInSec) {
         if (isOnGround()) {
             if (keyEventHandler.isSpaceKeyPressed() && jumpCooldown > 1) {
-                applyForce(new Vector2(0, -1500));
+                applyForce(new Vector2(0, -1000));
                 jumpCooldown = 0;
             } else {
                 jumpCooldown += 100 * deltaInSec;
@@ -107,7 +98,7 @@ public class Lucio extends GameObject {
         for (Body body : physicWorld.getBodies()) {
             if (physicWorld.isInContact(this, body)) {
                 if (!(body instanceof Lucio)) {
-                    setLinearVelocity(getLinearVelocity().x, 0);
+                    setLinearVelocity(getLinearVelocity().x, -0.1);
                     return true;
                 }
             }
