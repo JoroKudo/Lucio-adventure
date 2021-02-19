@@ -18,19 +18,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Game extends CopyOnWriteArrayList<GameObject> {
 
     public final KeyEventHandler keyEventHandler;
-    private final Runnable gameLoopStopper;
+
     private final Navigator navigator;
     public final World<Body> physicWorld = new World<>();
     public HealthBar healthBar;
 
 
-    private GraphicsContext gc;
+
 
     private final CollisionDetector collisioner;
 
-    public Game(KeyEventHandler keyEventHandler, Navigator navigator, Runnable gameLoopStopper) {
+    public Game(KeyEventHandler keyEventHandler, Navigator navigator) {
         this.keyEventHandler = keyEventHandler;
-        this.gameLoopStopper = gameLoopStopper;
+
         this.collisioner = new CollisionDetector(this);
         this.navigator = navigator;
 
@@ -94,7 +94,7 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
 
 
         physicWorld.update(elapsedTime);
-        lucio.handleNavigationEvents(elapsedTime);
+        lucio.handleNavigationEvents();
         lucio.jump(elapsedTime);
 
 
@@ -112,8 +112,5 @@ public class Game extends CopyOnWriteArrayList<GameObject> {
     }
 
 
-    private void stop() {
-        gameLoopStopper.run();
-        clear();
-    }
+
 }

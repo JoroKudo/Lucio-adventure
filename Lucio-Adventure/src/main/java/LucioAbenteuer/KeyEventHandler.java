@@ -8,53 +8,25 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
     private boolean isLeftKeyPressed = false;
     private boolean isRightKeyPressed = false;
     private boolean isSpaceKeyPressed = false;
-    private boolean isUpKeyPressed = false;
-    private boolean isDownKeyPressed = false;
+
 
 
     private boolean isLeftKeyReleased = true;
     private boolean isRightKeyReleased = true;
-    private boolean isSpaceKeyReleased = true;
-    private boolean isUpKeyReleased = true;
-    private boolean isDownKeyReleased = true;
 
     @Override
     public void handle(KeyEvent event) {
         boolean pressed = event.getEventType() == KeyEvent.KEY_PRESSED;
         switch (event.getCode()) {
-            case A:
-                isLeftKeyPressed = pressed;
-                break;
-            case D:
-                isRightKeyPressed = pressed;
-                break;
-            case W:
-                isUpKeyPressed = pressed;
-                break;
-            case S:
-                isDownKeyPressed = pressed;
-                break;
-            case SPACE:
-                isSpaceKeyPressed = pressed;
-                break;
+            case A -> isLeftKeyPressed = pressed;
+            case D -> isRightKeyPressed = pressed;
+            case SPACE -> isSpaceKeyPressed = pressed;
         }
         boolean released = event.getEventType() == KeyEvent.KEY_RELEASED;
         switch (event.getCode()) {
-            case A:
-                isLeftKeyReleased = released;
-                break;
-            case D:
-                isRightKeyReleased = released;
-                break;
-            case W:
-                isUpKeyReleased = pressed;
-                break;
-            case S:
-                isDownKeyReleased = pressed;
-                break;
-            case SPACE:
-                isSpaceKeyReleased = released;
-                break;
+            case A -> isLeftKeyReleased = released;
+            case D -> isRightKeyReleased = released;
+
         }
     }
 
@@ -78,23 +50,5 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
         return isRightKeyReleased;
     }
 
-    public boolean isDownKeyPressed() {
-        return isDownKeyPressed;
-    }
 
-    public boolean isUpKeyPressed() {
-        return isUpKeyPressed;
-    }
-
-    public boolean isDownKeyReleased() {
-        return isDownKeyReleased;
-    }
-
-    public boolean isUpKeyReleased() {
-        return isUpKeyReleased;
-    }
-
-    public boolean isSpaceKeyReleased() {
-        return isSpaceKeyReleased;
-    }
 }

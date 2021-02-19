@@ -6,7 +6,6 @@ import LucioAbenteuer.common.Navigator;
 import LucioAbenteuer.Images;
 import LucioAbenteuer.MusicType;
 import LucioAbenteuer.Sound;
-import LucioAbenteuer.SoundEffectType;
 import javafx.scene.input.KeyCode;
 
 public class GameOverScene extends BaseScene implements Initializable {

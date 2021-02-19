@@ -2,11 +2,7 @@ package LucioAbenteuer;
 
 
 import LucioAbenteuer.GameObjects.*;
-import LucioAbenteuer.gui.SceneType;
-import LucioAbenteuer.main.App;
 import org.dyn4j.dynamics.Body;
-import org.dyn4j.geometry.Vector2;
-import org.dyn4j.world.PhysicsWorld;
 import org.dyn4j.world.World;
 
 public class CollisionDetector {
@@ -15,7 +11,7 @@ public class CollisionDetector {
         this.game = game;
     }
 
-    private Game game;
+    private final Game game;
 
     public Score score = new Score();
 
@@ -27,7 +23,7 @@ public class CollisionDetector {
     private Body body2;
     private World<Body> physicWorld;
     private boolean playSoundOnce = true;
-    private double jumpCooldown;
+
 
 
     public void handle(Body body1, Body body2, World<Body> physicWorld) {
@@ -44,14 +40,14 @@ public class CollisionDetector {
 
     }
 
-    public boolean handleLucioCoin() {
+    public void handleLucioCoin() {
 
         if (body1 instanceof Lucio && body2 instanceof Coin) {
             physicWorld.removeBody(body2);
             Sound.play(SoundEffectType.COIN);
             score.coinCounter++;
 
-            return false;
+            return;
         }
 
         if (body2 instanceof Lucio && body1 instanceof Coin) {
@@ -60,13 +56,11 @@ public class CollisionDetector {
 
             score.coinCounter++;
 
-            return false;
         }
-        return true;
     }
 
 
-    public boolean handleLucioKey() {
+    public void handleLucioKey() {
 
         if (body1 instanceof Lucio && body2 instanceof Key) {
             physicWorld.removeBody(body2);
@@ -76,7 +70,7 @@ public class CollisionDetector {
             Rooms.exitlight
                     .image = Images.LIGHTON;
 
-            return false;
+            return;
         }
 
         if (body2 instanceof Lucio && body1 instanceof Key) {
@@ -88,12 +82,10 @@ public class CollisionDetector {
             Rooms.exitlight
                     .image = Images.LIGHTON;
 
-            return false;
         }
-        return true;
     }
 
-    public boolean handleLucioHeart() {
+    public void handleLucioHeart() {
 
 
         if (body1 instanceof Lucio && body2 instanceof Heart) {
@@ -104,7 +96,7 @@ public class CollisionDetector {
                 healthBar.life++;
             }
             Sound.play(SoundEffectType.HEAL);
-            return false;
+            return;
         }
 
         if (body2 instanceof Lucio && body1 instanceof Heart) {
@@ -118,12 +110,10 @@ public class CollisionDetector {
             Sound.play(SoundEffectType.HEAL);
 
 
-            return false;
         }
-        return true;
     }
 
-    public boolean handleLucioDoor() {
+    public void handleLucioDoor() {
         if ((body1 instanceof Lucio && body2 instanceof Door && isOpen) || (body2 instanceof Lucio && body1 instanceof Door && isOpen)) {
 
             room++;
@@ -137,14 +127,12 @@ public class CollisionDetector {
             Rooms.roomchanges(room, physicWorld);
 
 
-            return false;
         }
-        return true;
 
     }
 
-    public boolean handleCubeButton() {
-        if ((body1 instanceof CompanianCube && body2 instanceof Button) || (body2 instanceof CompanianCube && body1 instanceof Button)) {
+    public void handleCubeButton() {
+        if ((body1 instanceof CompanionCube && body2 instanceof Button) || (body2 instanceof CompanionCube && body1 instanceof Button)) {
 
             System.out.println("activ");
 
@@ -157,15 +145,12 @@ public class CollisionDetector {
             }
 
 
-            return false;
-
         }
-        return true;
 
 
     }
 
-    public boolean handleLucioPain() {
+    public void handleLucioPain() {
 
         if (body1 instanceof Lucio && body2 instanceof Laser || body2 instanceof Spikes && body1 instanceof Lucio) {
             game.lucio = new Lucio(11, 7, game.physicWorld, game.keyEventHandler);
@@ -177,13 +162,13 @@ public class CollisionDetector {
             physicWorld.removeBody(body1);
 
             if (healthBar.life > 0 ){
-                Sound.play(SoundEffectType.HURT);;}
+                Sound.play(SoundEffectType.HURT);}
             physicWorld.addBody(game.lucio);
 
 
 
 
-            return false;
+            return;
         }
 
 
@@ -199,14 +184,12 @@ public class CollisionDetector {
             if (healthBar.life == 0 ){
                 Sound.stop(SoundEffectType.HURT);}
 
-            return false;
         }
 
-        return true;
     }
     public boolean handleCubeLaser() {
 
-        if (body1 instanceof CompanianCube && body2 instanceof Laser) {
+        if (body1 instanceof CompanionCube && body2 instanceof Laser) {
 
 
 
@@ -216,7 +199,8 @@ public class CollisionDetector {
             physicWorld.removeBody(body1);
 
             if (healthBar.life > 0 ){
-                Sound.play(SoundEffectType.HURT);;}
+                Sound.play(SoundEffectType.HURT);
+            }
             physicWorld.addBody(game.lucio);
 
 

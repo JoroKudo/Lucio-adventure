@@ -3,16 +3,13 @@ package LucioAbenteuer;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 import java.net.URL;
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Sound {
 
-    // Need to be a Instance-Variable for the music,
-    // else the Garbage Collector stop the music.
+
     private static MediaPlayer musicPlayer;
     private static MediaPlayer effectPlayer;
     private final static Map<String, Media> cache = new HashMap<>();
@@ -36,9 +33,10 @@ public class Sound {
     }
 
     public static void play(SoundEffectType soundEffect) {
-        effectPlayer= createMediaPlayer(getSoundFileName(soundEffect));
+        effectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
         effectPlayer.play();
     }
+
     public static void stop(SoundEffectType soundEffect) {
         if (effectPlayer != null) {
             effectPlayer.stop();
@@ -64,32 +62,20 @@ public class Sound {
     }
 
     private static String getSoundFileName(SoundEffectType soundEffect) {
-        switch (soundEffect) {
-            case HEAL:
-                return "Heart.mp3";
-            case DOOR_OPEN:
-                return "DoorOpen.mp3";
-            case HURT:
-                return "Hurt.mp3";
-            case COIN:
-                return "Coin.mp3";
-            case KEY:
-                return "Key.mp3";
-            default:
-                throw new RuntimeException("No Soundfilename set for this enum value:" + soundEffect);
-        }
+        return switch (soundEffect) {
+            case HEAL -> "Heart.mp3";
+            case DOOR_OPEN -> "DoorOpen.mp3";
+            case HURT -> "Hurt.mp3";
+            case COIN -> "Coin.mp3";
+            case KEY -> "Key.mp3";
+        };
     }
 
     private static String getSoundFileName(MusicType music) {
-        switch (music) {
-            case BACKGROUND:
-                return "Lucio_BGM.mp3";
-            case INTRO:
-                return "MainMenu.wav";
-            case GAME_OVER:
-                return "gameOver.mp3";
-            default:
-                throw new RuntimeException("No Soundfilename set for this enum value:" + music);
-        }
+        return switch (music) {
+            case BACKGROUND -> "Lucio_BGM.mp3";
+            case INTRO -> "MainMenu.wav";
+            case GAME_OVER -> "gameOver.mp3";
+        };
     }
 }

@@ -1,8 +1,6 @@
 package LucioAbenteuer;
 
-import LucioAbenteuer.gui.SceneType;
 import org.dyn4j.dynamics.Body;
-import org.dyn4j.world.PhysicsWorld;
 import LucioAbenteuer.GameObjects.*;
 import org.dyn4j.world.World;
 
@@ -126,7 +124,7 @@ public class Rooms {
 
 
                 case 'H' -> bodiesFromRoom.add(new Heart(x, y));
-                case 'R' -> bodiesFromRoom.add(new CompanianCube(x, y));
+                case 'R' -> bodiesFromRoom.add(new CompanionCube(x, y));
                 case 'P' -> bodiesFromRoom.add(new Button(x, y));
                 case 'L' -> bodiesFromRoom.add(new Laser(x, y));
                 case 'K' -> bodiesFromRoom.add(new Key(x, y));

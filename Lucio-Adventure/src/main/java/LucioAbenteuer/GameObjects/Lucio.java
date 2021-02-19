@@ -10,7 +10,7 @@ import org.dyn4j.world.World;
 public class Lucio extends GameObject {
 
 
-    private World<Body> physicWorld;
+    private final World<Body> physicWorld;
     private Direction currentDirect = Direction.RIGHT;
     private final KeyEventHandler keyEventHandler;
     private double jumpCooldown = 1;
@@ -46,7 +46,7 @@ public class Lucio extends GameObject {
 
 
 
-    public void handleNavigationEvents(double deltaInSec) {
+    public void handleNavigationEvents() {
 
 
         if (keyEventHandler.isRightKeyPressed())
