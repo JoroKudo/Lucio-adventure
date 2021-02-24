@@ -10,7 +10,7 @@ import java.util.List;
 public class Rooms {
     public static ExitLight exitlight;
     public static int room =1;
-
+    public static BigLaser  bl;
 
     public static String room1 =
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
@@ -80,11 +80,11 @@ public class Rooms {
                     "W00000000000C0C0C0C0000C00000W" +
                     "WBB0BBBB000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W00000000000R0000000000000000W" +
+                    "W00000000R0000000000000000000W" +
                     "W000000000000000000000000R000W" +
-                    "W00000000BBBB0000000B000BBBBBW" +
-                    "W00000000BBBB0000000B000BBBBBW" +
-                    "WSSSSSSSSBBBBSSSSSSSB0P0BBBBBW" +
+                    "W00000BBBB0000000000B000BBBBBW" +
+                    "W00000BBBB0000000000B000BBBBBW" +
+                    "WSSSSSBBBBSSSSSSSSSSB0P0BBBBBW" +
                     "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
     public static String room5 =
@@ -125,7 +125,7 @@ public class Rooms {
                 case 'L' -> bodiesFromRoom.add(new Laser(x, y));
                 case 'K' -> bodiesFromRoom.add(new Key(x, y));
                 case 'I' -> bodiesFromRoom.add(new LaserButton(x, y));
-                case 'V' -> bodiesFromRoom.add(new BigLaser(x, y));
+                case 'V' -> {bl =new BigLaser(x, y);bodiesFromRoom.add(bl);}
                 case 'D' -> {
                     bodiesFromRoom.add(new Door(x, y));
                     exitlight = new ExitLight((x - 0.4) * Const.BLOCK_SIZE, (y - 2) * Const.BLOCK_SIZE);

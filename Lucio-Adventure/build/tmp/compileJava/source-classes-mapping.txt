@@ -69,14 +69,14 @@ LucioAbenteuer/Images.java
  LucioAbenteuer.Images
 LucioAbenteuer/GameObjects/Coin.java
  LucioAbenteuer.GameObjects.Coin
-LucioAbenteuer/Rooms.java
- LucioAbenteuer.Rooms
-LucioAbenteuer/GameObjects/Door.java
- LucioAbenteuer.GameObjects.Door
-LucioAbenteuer/GameObjects/Key.java
- LucioAbenteuer.GameObjects.Key
 LucioAbenteuer/CollisionDetector.java
  LucioAbenteuer.CollisionDetector
 LucioAbenteuer/Facility.java
  LucioAbenteuer.Facility
  LucioAbenteuer.Facility$1
+LucioAbenteuer/GameObjects/Key.java
+ LucioAbenteuer.GameObjects.Key
+LucioAbenteuer/GameObjects/Door.java
+ LucioAbenteuer.GameObjects.Door
+LucioAbenteuer/Rooms.java
+ LucioAbenteuer.Rooms

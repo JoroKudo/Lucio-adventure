@@ -12,20 +12,17 @@ public class CollisionDetector {
     private final Score score;
     public  HealthBar healthBar;
     private boolean isOpen = false;
-    private boolean laserremove = false;
     private Body body1;
     private Body body2;
-    private Body body3;
     private World<Body> physicWorld;
     private boolean playSoundOnce = true;
+    private BigLaser biglaser;
 
     public CollisionDetector(Facility facility, Score score, HealthBar healthBar) {
         this.facility = facility;
         this.score = score;
         this.healthBar = healthBar;
-
     }
-
     public void handle(Body body1, Body body2, World<Body> physicWorld) {
         this.physicWorld = physicWorld;
         this.body1 = body1;
@@ -48,8 +45,6 @@ public class CollisionDetector {
             score.coinCounter = coin.collect(body2,physicWorld,score.coinCounter);
         }
     }
-
-
     public void handleLucioKey() {
 
         if (body1 instanceof Lucio && body2 instanceof Key) {
@@ -58,7 +53,6 @@ public class CollisionDetector {
             isOpen =key.open(body2,physicWorld,isOpen);
         }
     }
-
     public void handleLucioHeart() {
 
         if (body1 instanceof Lucio && body2 instanceof Heart) {
@@ -70,8 +64,7 @@ public class CollisionDetector {
     public void handleLaserButton(){
         if ((body1 instanceof CompanionCube && body2 instanceof LaserButton) || (body2 instanceof CompanionCube && body1 instanceof LaserButton)) {
             System.out.println("activ");
-            laserremove = true;
-
+            physicWorld.removeBody(Rooms.bl);
 
     }}
 
@@ -80,11 +73,8 @@ public class CollisionDetector {
             Door door;
             door = (Door) body2;
             isOpen =door.leave(physicWorld,facility);
-
         }
-
     }
-
     public void handleCubeButton() {
         if ((body1 instanceof CompanionCube && body2 instanceof Button) || (body2 instanceof CompanionCube && body1 instanceof Button)) {
             System.out.println("activ");
