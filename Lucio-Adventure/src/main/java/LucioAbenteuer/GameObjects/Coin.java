@@ -15,10 +15,7 @@ public class Coin extends GameObject {
     }
 
     public int collect(Body body, World<Body> physicWorld, int money) {
-
-
         money++;
-
         Sound.play(SoundEffectType.COIN);
         physicWorld.removeBody(body);
         return money;

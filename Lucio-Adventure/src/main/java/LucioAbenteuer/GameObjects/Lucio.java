@@ -94,7 +94,7 @@ public class Lucio extends GameObject {
         for (Body body : physicWorld.getBodies()) {
             if (physicWorld.isInContact(this, body)) {
                 if (!(body instanceof Lucio)) {
-                    setLinearVelocity(getLinearVelocity().x, -0.1);
+                    setLinearVelocity(getLinearVelocity().x, 0);
                     return true;
                 }
             }

@@ -13,8 +13,8 @@ public class Door extends GameObject {
         setMass(MassType.INFINITE);
 
     }
-    public boolean leave(Body body, World<Body> physicWorld, boolean isOpen, Facility facility){
-        Rooms.room++;
+    public boolean leave( World<Body> physicWorld,  Facility facility){
+        int place =Rooms.room++;
         facility.lucio = new Lucio(11, 7, physicWorld, facility.keyEventHandler);
 
 
@@ -22,7 +22,7 @@ public class Door extends GameObject {
         physicWorld.addBody(facility.lucio);
 
 
-        Rooms.roomchanges(Rooms.room++, physicWorld);
+        Rooms.roomchanges(place, physicWorld);
         return false;
     }
 }

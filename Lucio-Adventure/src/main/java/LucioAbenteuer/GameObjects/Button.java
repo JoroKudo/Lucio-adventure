@@ -9,7 +9,5 @@ public class Button extends GameObject {
         setMass(MassType.INFINITE);
 
     }
-    public void activate(){
 
-    }
 }

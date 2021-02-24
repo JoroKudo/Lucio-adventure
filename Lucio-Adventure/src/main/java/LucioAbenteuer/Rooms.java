@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Rooms {
     public static ExitLight exitlight;
-    public static int room =1;
+    public static int room =2;
 
 
     public static String room1 =

@@ -77,7 +77,7 @@ public class CollisionDetector {
         if ((body1 instanceof Lucio && body2 instanceof Door && isOpen)) {
             Door door;
             door = (Door) body2;
-            isOpen =door.leave(body2,physicWorld,isOpen,facility);
+            isOpen =door.leave(physicWorld,facility);
 
 
 
@@ -145,7 +145,7 @@ public class CollisionDetector {
         if (body1 instanceof CompanionCube && body2 instanceof Laser) {
             CompanionCube companionCube;
             companionCube = (CompanionCube) body1;
-            companionCube.shift(new Vector2(companionCube.getLinearVelocity().x, 0));
+            companionCube.shift(new Vector2(companionCube.getLinearVelocity().x+1, 0));
 
 
 

@@ -2,8 +2,9 @@ LucioAbenteuer/common/Initializable.java
  LucioAbenteuer.common.Initializable
 LucioAbenteuer/common/Navigator.java
  LucioAbenteuer.common.Navigator
-LucioAbenteuer/GameObjects/Wall.java
- LucioAbenteuer.GameObjects.Wall
+LucioAbenteuer/Sound.java
+ LucioAbenteuer.Sound
+ LucioAbenteuer.Sound$1
 LucioAbenteuer/gui/GameWonScene.java
  LucioAbenteuer.gui.GameWonScene
 LucioAbenteuer/main/Launcher.java
@@ -24,8 +25,8 @@ LucioAbenteuer/GameObjects/Floor.java
  LucioAbenteuer.GameObjects.Floor
 LucioAbenteuer/Score.java
  LucioAbenteuer.Score
-LucioAbenteuer/GameObjects/Coin.java
- LucioAbenteuer.GameObjects.Coin
+LucioAbenteuer/GameObjects/CompanionCube.java
+ LucioAbenteuer.GameObjects.CompanionCube
 LucioAbenteuer/gui/WelcomeScene.java
  LucioAbenteuer.gui.WelcomeScene
 LucioAbenteuer/Images.java
@@ -34,8 +35,9 @@ LucioAbenteuer/SoundEffectType.java
  LucioAbenteuer.SoundEffectType
 LucioAbenteuer/GameObjects/Laser.java
  LucioAbenteuer.GameObjects.Laser
-LucioAbenteuer/GameObjects/Lucio.java
- LucioAbenteuer.GameObjects.Lucio
+LucioAbenteuer/gui/GameScene.java
+ LucioAbenteuer.gui.GameScene
+ LucioAbenteuer.gui.GameScene$1
 LucioAbenteuer/GameObjects/Spikes.java
  LucioAbenteuer.GameObjects.Spikes
 LucioAbenteuer/ExitLight.java
@@ -50,21 +52,19 @@ LucioAbenteuer/gui/GameOverScene.java
  LucioAbenteuer.gui.GameOverScene
 LucioAbenteuer/MusicType.java
  LucioAbenteuer.MusicType
-LucioAbenteuer/GameObjects/Button.java
- LucioAbenteuer.GameObjects.Button
-LucioAbenteuer/gui/GameScene.java
- LucioAbenteuer.gui.GameScene
- LucioAbenteuer.gui.GameScene$1
-LucioAbenteuer/Sound.java
- LucioAbenteuer.Sound
- LucioAbenteuer.Sound$1
-LucioAbenteuer/GameObjects/CompanionCube.java
- LucioAbenteuer.GameObjects.CompanionCube
 LucioAbenteuer/KeyEventHandler.java
  LucioAbenteuer.KeyEventHandler
  LucioAbenteuer.KeyEventHandler$1
 LucioAbenteuer/main/App.java
  LucioAbenteuer.main.App
+LucioAbenteuer/GameObjects/Wall.java
+ LucioAbenteuer.GameObjects.Wall
+LucioAbenteuer/GameObjects/Coin.java
+ LucioAbenteuer.GameObjects.Coin
+LucioAbenteuer/GameObjects/Button.java
+ LucioAbenteuer.GameObjects.Button
+LucioAbenteuer/GameObjects/Lucio.java
+ LucioAbenteuer.GameObjects.Lucio
 LucioAbenteuer/CollisionDetector.java
  LucioAbenteuer.CollisionDetector
 LucioAbenteuer/Facility.java
