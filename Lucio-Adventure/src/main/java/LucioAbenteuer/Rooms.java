@@ -20,10 +20,10 @@ public class Rooms {
                     "W0000000000000000000000000000W" +
                     "WC0000C0000000D00000000000000W" +
                     "W0000000000BBBBBBB00000000000W" +
-                    "W00000000000C0C0C0C0000C00000W" +
-                    "WBB0BBBB000000000000000000000W" +
-                    "W0000000000000000000000SSSS00W" +
-                    "W00000000000BBBBBBB0000BBBB00W" +
+                    "W0000000000000000000000C0C0C0W" +
+                    "W000000000000000000000BB00BBBW" +
+                    "W000BBBBBBB000000000000SSSS00W" +
+                    "W0000000000000000000000BBBB00W" +
                     "W0000000000000000000000000000W" +
                     "W000000000R000000000000000000W" +
                     "W0000000000000000000000000000W" +
@@ -36,8 +36,8 @@ public class Rooms {
                     "0000000000000L0000000000000000" +
                     "0000000000000L0000000000000000" +
                     "0000K00000000L0000000000000000" +
-                    "0000000000000L0R00000000000000" +
-                    "00K0000000000L0000000000000000" +
+                    "0000000000000L0R0000000000D000" +
+                    "00K0000000000L0000000000BBBBBB" +
                     "0CBBB0000C000LBBBBB00000000000" +
                     "0000000000000LBBBBBBB000000000" +
                     "00000000000B0L0C0C0C0C0C000000" +
@@ -127,9 +127,6 @@ public class Rooms {
                     bodiesFromRoom.add(new Door(x, y));
                     exitlight = new ExitLight((x - 0.4) * Const.BLOCK_SIZE, (y - 2) * Const.BLOCK_SIZE);
                 }
-
-
-
             }
         }
         return bodiesFromRoom;
@@ -151,16 +148,12 @@ public class Rooms {
                 for (Body body : createRoom(room2)) {
                     physicWorld.addBody(body);
                     Images.bgp = Images.LVL2;
-
-
                 }
-
                 break;
             case 3:
                 for (Body body : createRoom(room3)) {
                     physicWorld.addBody(body);
                     Images.bgp = Images.LVL3;
-
 
                 }
                 break;
@@ -173,9 +166,7 @@ public class Rooms {
             case 5:
                 for (Body body : createRoom(room5)) {
                     physicWorld.addBody(body);
-
                 }
-
                 break;
 
 

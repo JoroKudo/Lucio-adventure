@@ -49,7 +49,7 @@ public class Facility extends CopyOnWriteArrayList<GameObject> {
         physicWorld.setGravity(new Vector2(0, 15));
         physicWorld.addBody(lucio);
 
-        for (Body body : Rooms.createRoom(Rooms.room4)) {
+        for (Body body : Rooms.createRoom(Rooms.room1)) {
             physicWorld.addBody(body);
         }
 

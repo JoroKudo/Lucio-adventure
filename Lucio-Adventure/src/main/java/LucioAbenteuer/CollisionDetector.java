@@ -150,10 +150,7 @@ public class CollisionDetector {
 
 
 
-            if (healthBar.life > 0) {
-                Sound.play(SoundEffectType.HURT);
-            }
-            physicWorld.addBody(facility.lucio);
+
 
 
             return false;
