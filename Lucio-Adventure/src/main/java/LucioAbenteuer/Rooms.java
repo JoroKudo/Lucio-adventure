@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Rooms {
     public static ExitLight exitlight;
-    public static int room =2;
+    public static int room =1;
 
 
     public static String room1 =
@@ -51,22 +51,23 @@ public class Rooms {
 
 
     public static String room3 =
+
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "WC0000C0000000D0K000000000000W" +
+                    "W0000000000000D0K000000000000W" +
                     "W0000000000BBBBBBB00000000000W" +
-                    "W00000000000C0C0C0C0000C00000W" +
-                    "WBB0BBBB000000000000000000000W" +
-                    "W0000000000000000000000SSSS00W" +
-                    "W00000000000BBBBBBB0000BBBB00W" +
+                    "W00000000000000000000000R0000W" +
+                    "W000000000000C00C00000BBB0000W" +
+                    "W0000000000000BBB000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W000000000R000000000000000000W" +
-                    "W0000000000000000HHH000000000W" +
-                    "W0P00000000000000000000000000W" +
-                    "000000000000000000000000000000";
+                    "W00000000000000000000BB000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0000000000B000B0B00000000000W" +
+                    "WSSSSSSSSSSSSSSSSSSSSSSSSB0P0W" +
+                    "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
     public static String room4 =
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +

@@ -75,7 +75,9 @@ public class Facility extends CopyOnWriteArrayList<GameObject> {
         lucio.getTransform().setRotation(0);
         lucio.update();
         if (healthBar.life == 0) {
+            remove(lucio);
             navigator.goTo(SceneType.GAME_OVER);
+            Sound.play(MusicType.GAME_OVER);
         }
 
         if (Rooms.room == 6) {

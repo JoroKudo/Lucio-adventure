@@ -6,7 +6,7 @@ import LucioAbenteuer.*;
 import org.dyn4j.world.World;
 
 public class Door extends GameObject {
-    private boolean isOpen = true;
+
     public Door(double x, double y) {
         super(Images.DOOR, x, y);
 
@@ -15,13 +15,9 @@ public class Door extends GameObject {
     }
     public boolean leave( World<Body> physicWorld,  Facility facility){
         Rooms.room++;
-        facility.lucio = new Lucio(11, 7, physicWorld, facility.keyEventHandler);
-
-
+        facility.lucio = new Lucio(10, 11, physicWorld, facility.keyEventHandler);
         physicWorld.removeAllBodies();
         physicWorld.addBody(facility.lucio);
-
-
         Rooms.roomchanges(Rooms.room, physicWorld);
         return false;
     }

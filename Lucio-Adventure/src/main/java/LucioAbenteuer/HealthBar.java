@@ -14,7 +14,7 @@ public class HealthBar {
 
 
         switch (life) {
-            case 0 -> System.out.println("ded");
+
             case 1 -> image = Images.LOWHP;
             case 2 -> image = Images.MIDHP;
             case 3 -> image = Images.FULLHP;

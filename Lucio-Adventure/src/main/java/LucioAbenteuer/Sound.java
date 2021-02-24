@@ -38,13 +38,7 @@ public class Sound {
         effectPlayer.play();
     }
 
-    public static void stop(SoundEffectType soundEffect) {
-        if (effectPlayer != null) {
-            effectPlayer.stop();
-        }
-        effectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
-        effectPlayer.stop();
-    }
+
 
 
     private static MediaPlayer createMediaPlayer(String filePath) {

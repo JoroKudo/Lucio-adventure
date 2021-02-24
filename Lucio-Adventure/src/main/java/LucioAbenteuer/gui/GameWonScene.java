@@ -13,7 +13,7 @@ public class GameWonScene extends BaseScene implements Initializable {
         super(navigator, Images.WIN);
 
         setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE) {
+            if (e.getCode() == KeyCode.ENTER) {
                 navigator.goTo(SceneType.WELCOME);
             }
         });
