@@ -16,7 +16,7 @@ public class CollisionDetector {
     private Body body2;
     private World<Body> physicWorld;
     private boolean playSoundOnce = true;
-    private BigLaser biglaser;
+
 
     public CollisionDetector(Facility facility, Score score, HealthBar healthBar) {
         this.facility = facility;
@@ -92,19 +92,18 @@ public class CollisionDetector {
 
     public void handleLucioPain() {
 
-        if (body1 instanceof Lucio && body2 instanceof Laser || body2 instanceof Spikes && body1 instanceof Lucio || body2 instanceof BigLaser && body1 instanceof Lucio) {
+        if ((body1 instanceof Lucio) && ((body2 instanceof Laser) || (body2 instanceof Spikes)  || (body2 instanceof BigLaser) )) {
             facility.lucio = new Lucio(6, 12.5, facility.physicWorld, facility.keyEventHandler);
             healthBar.life--;
+
             physicWorld.removeBody(body1);
 
-            if (healthBar.life > 0) {
+
                 Sound.play(SoundEffectType.HURT);
-            }
+
+
             physicWorld.addBody(facility.lucio);
         }
-
-
-
     }
 
     public void handleCubeLaser() {
@@ -115,7 +114,4 @@ public class CollisionDetector {
             companionCube.shift(new Vector2(companionCube.getLinearVelocity().x+1, 0));
         }
     }
-
-
 }
-

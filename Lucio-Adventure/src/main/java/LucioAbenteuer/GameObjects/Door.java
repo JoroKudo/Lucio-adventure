@@ -17,6 +17,7 @@ public class Door extends GameObject {
         Rooms.room++;
         facility.lucio = new Lucio(6, 11.5, physicWorld, facility.keyEventHandler);
         physicWorld.removeAllBodies();
+
         physicWorld.addBody(facility.lucio);
         Rooms.roomchanges(Rooms.room, physicWorld);
         return false;

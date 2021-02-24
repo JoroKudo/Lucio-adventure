@@ -12,6 +12,7 @@ public class GameOverScene extends BaseScene implements Initializable {
 
     public GameOverScene(Navigator navigator) {
         super(navigator, Images.GAMEOVER);
+        Sound.play(MusicType.GAME_OVER);
 
         setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
@@ -23,6 +24,7 @@ public class GameOverScene extends BaseScene implements Initializable {
     @Override
     public void onInitialize() {
         Sound.stop(MusicType.BACKGROUND);
+
         Sound.play(MusicType.GAME_OVER);
 
     }

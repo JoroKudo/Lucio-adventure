@@ -72,12 +72,12 @@ public class Facility extends CopyOnWriteArrayList<GameObject> {
         physicWorld.update(elapsedTime);
         lucio.handleNavigationEvents();
         lucio.jump(elapsedTime);
+
         lucio.getTransform().setRotation(0);
         lucio.update();
         if (healthBar.life == 0) {
-            remove(lucio);
+            physicWorld.removeAllBodies();
             navigator.goTo(SceneType.GAME_OVER);
-            Sound.play(MusicType.GAME_OVER);
         }
 
         if (Rooms.room == 6) {
