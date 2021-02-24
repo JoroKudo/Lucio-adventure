@@ -1,5 +1,4 @@
 package LucioAbenteuer;
-
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
@@ -8,8 +7,6 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
     private boolean isLeftKeyPressed = false;
     private boolean isRightKeyPressed = false;
     private boolean isSpaceKeyPressed = false;
-
-
     private boolean isLeftKeyReleased = true;
     private boolean isRightKeyReleased = true;
 
@@ -25,29 +22,21 @@ public class KeyEventHandler implements EventHandler<KeyEvent> {
         switch (event.getCode()) {
             case A -> isLeftKeyReleased = released;
             case D -> isRightKeyReleased = released;
-
         }
     }
-
     public boolean isLeftKeyPressed() {
         return isLeftKeyPressed;
     }
-
     public boolean isRightKeyPressed() {
         return isRightKeyPressed;
     }
-
     public boolean isSpaceKeyPressed() {
         return isSpaceKeyPressed;
     }
-
     public boolean isLeftKeyReleased() {
         return isLeftKeyReleased;
     }
-
     public boolean isRightKeyReleased() {
         return isRightKeyReleased;
     }
-
-
 }

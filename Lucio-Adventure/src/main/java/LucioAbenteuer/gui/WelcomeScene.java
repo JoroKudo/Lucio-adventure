@@ -1,5 +1,4 @@
 package LucioAbenteuer.gui;
-
 import LucioAbenteuer.common.BaseScene;
 import LucioAbenteuer.common.Initializable;
 import LucioAbenteuer.common.Navigator;
@@ -18,7 +17,6 @@ public class WelcomeScene extends BaseScene implements Initializable {
             }
         });
     }
-
     @Override
     public void onInitialize() {
         Sound.play(MusicType.INTRO);
