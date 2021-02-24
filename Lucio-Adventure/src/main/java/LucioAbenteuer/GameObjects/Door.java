@@ -14,7 +14,7 @@ public class Door extends GameObject {
 
     }
     public boolean leave( World<Body> physicWorld,  Facility facility){
-        int place =Rooms.room++;
+        Rooms.room++;
         facility.lucio = new Lucio(11, 7, physicWorld, facility.keyEventHandler);
 
 
@@ -22,7 +22,7 @@ public class Door extends GameObject {
         physicWorld.addBody(facility.lucio);
 
 
-        Rooms.roomchanges(place, physicWorld);
+        Rooms.roomchanges(Rooms.room, physicWorld);
         return false;
     }
 }
