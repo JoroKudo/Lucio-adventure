@@ -39,13 +39,13 @@ public class Rooms {
                     "0000000000000L0R0000000000D000" +
                     "00K0000000000L0000000000BBBBBB" +
                     "0CBBB0000C000LBBBBB00000000000" +
-                    "0000000000000LBBBBBBB000000000" +
+                    "0000000000000L00000BB000000000" +
                     "00000000000B0L0C0C0C0C0C000000" +
                     "0000000BBBBB0L0000000000000000" +
                     "00000P0000000L000000000000000C" +
                     "0000BBB000000BBBBBBBBBBBB00000" +
                     "000000000000000000000000000000" +
-                    "W0000000000000000HHH000000000W" +
+                    "W00000000000K0000HHH000000000W" +
                     "W0000000000000000000000000000W" +
                     "00F00000000000FF000000000000F0";
 
@@ -53,20 +53,20 @@ public class Rooms {
     public static String room3 =
 
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000D0K000000000000W" +
+                    "W0000000000B00000000000000000W" +
+                    "W0000000000B00000000000000000W" +
+                    "W0000R00000B00000000000000000W" +
+                    "W000BB00000B00D0K000000000000W" +
                     "W0000000000BBBBBBB00000000000W" +
-                    "W00000000000000000000000R0000W" +
-                    "W000000000000C00C00000BBB0000W" +
-                    "W0000000000000BBB000000000000W" +
+                    "WB0000000000000000000000R0000W" +
+                    "W0000000I0000C00C00000BBB0000W" +
+                    "W000B00BBB0000BBB0V0000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W00000000000000000000BB000000W" +
+                    "WB0000000000000000000BB000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000B000B0B00000000000W" +
-                    "WSSSSSSSSSSSSSSSSSSSSSSSSB0P0W" +
+                    "W00B0000000000000000000000000W" +
+                    "W0000B0B0BB0000B0B00000000000W" +
+                    "WSSSSBBBSSSSSSSSSS0SSSSSSB0P0W" +
                     "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
     public static String room4 =
@@ -85,7 +85,7 @@ public class Rooms {
                     "W00000000BBBB0000000B000BBBBBW" +
                     "W00000000BBBB0000000B000BBBBBW" +
                     "WSSSSSSSSBBBBSSSSSSSB0P0BBBBBW" +
-                    "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+                    "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
     public static String room5 =
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
@@ -102,8 +102,8 @@ public class Rooms {
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W000000000000000000000000S000W" +
-                    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+                    "W000000000R00000000000K00S000W" +
+                    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
 
     public static List<Body> createRoom(String roomname) {
@@ -124,6 +124,8 @@ public class Rooms {
                 case 'P' -> bodiesFromRoom.add(new Button(x, y));
                 case 'L' -> bodiesFromRoom.add(new Laser(x, y));
                 case 'K' -> bodiesFromRoom.add(new Key(x, y));
+                case 'I' -> bodiesFromRoom.add(new LaserButton(x, y));
+                case 'V' -> bodiesFromRoom.add(new BigLaser(x, y));
                 case 'D' -> {
                     bodiesFromRoom.add(new Door(x, y));
                     exitlight = new ExitLight((x - 0.4) * Const.BLOCK_SIZE, (y - 2) * Const.BLOCK_SIZE);

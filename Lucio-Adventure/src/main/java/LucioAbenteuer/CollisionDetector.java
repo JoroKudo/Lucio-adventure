@@ -12,8 +12,10 @@ public class CollisionDetector {
     private final Score score;
     public  HealthBar healthBar;
     private boolean isOpen = false;
+    private boolean laserremove = false;
     private Body body1;
     private Body body2;
+    private Body body3;
     private World<Body> physicWorld;
     private boolean playSoundOnce = true;
 
@@ -21,6 +23,7 @@ public class CollisionDetector {
         this.facility = facility;
         this.score = score;
         this.healthBar = healthBar;
+
     }
 
     public void handle(Body body1, Body body2, World<Body> physicWorld) {
@@ -34,6 +37,7 @@ public class CollisionDetector {
         handleLucioHeart();
         handleLucioKey();
         handleCubeLaser();
+        handleLaserButton();
     }
 
     public void handleLucioCoin() {
@@ -63,6 +67,13 @@ public class CollisionDetector {
             healthBar.life = heart.heal(body2,physicWorld,healthBar.life);
         }
     }
+    public void handleLaserButton(){
+        if ((body1 instanceof CompanionCube && body2 instanceof LaserButton) || (body2 instanceof CompanionCube && body1 instanceof LaserButton)) {
+            System.out.println("activ");
+            laserremove = true;
+
+
+    }}
 
     public void handleLucioDoor() {
         if ((body1 instanceof Lucio && body2 instanceof Door && isOpen)) {
@@ -91,8 +102,8 @@ public class CollisionDetector {
 
     public void handleLucioPain() {
 
-        if (body1 instanceof Lucio && body2 instanceof Laser || body2 instanceof Spikes && body1 instanceof Lucio) {
-            facility.lucio = new Lucio(10, 11, facility.physicWorld, facility.keyEventHandler);
+        if (body1 instanceof Lucio && body2 instanceof Laser || body2 instanceof Spikes && body1 instanceof Lucio || body2 instanceof BigLaser && body1 instanceof Lucio) {
+            facility.lucio = new Lucio(6, 12.5, facility.physicWorld, facility.keyEventHandler);
             healthBar.life--;
             physicWorld.removeBody(body1);
 

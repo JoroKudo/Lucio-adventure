@@ -34,6 +34,8 @@ public class Images {
     public final static Image LASER_BEAM = getImageSize("LaserBeam.png");
     public final static Image GAMEOVER = getImageSize("GameOver.png");
     public final static Image SPIKES = getImageSize("Spikes.png");
+    public final static Image LASERBUTTTON = getImageSize("ActivButton.png");
+    public final static Image LASER = getImageSize("Laser.png");
 
 
     public static Image bgp = Images.LVL1;
