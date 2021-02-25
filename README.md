@@ -43,68 +43,111 @@
 Unser Game Projekt ist angelehnt an das 2D Spiel Super Mario, allerdings ist das Ziel nicht einfach das Level durchzuspielen und eine Person zu retten, sondern Rätsel zu lösen. In jedem Raum gibt es eine Aufgabe zu bewältigen, um weiter zu kommen. Da dies etwas zu langweilig wäre, gibt es auch Gegner, vor denen man sich in Acht nehmen sollte. 
 ![mockup_lucio](./Mockup/mockup_lucio.png)
 
-1.
+
 # Anforderungsanalyse
 
-  1.
+  
 ## User Stories
 
-• Als Spieler möchte ich Items einsammeln können die mir eine Belohnung geben (zum Beispiel. Mehr lebenspunkte).
-
-• Als Spieler möchte ich einen GameWinScreen haben
-
-• Als Spieler möchte ich einen GameOverScreen haben
-
-• Als Spieler möchte ich einen StartScreen haben.
-
-• Als Spieler möchte ich sehen wie viele Lebenspunkte ich habe
-
-• Als Spieler möchte ich Hindernisse die mir eine Herausforderung darstellen.
-
-• Als Spieler möchte ich Aufgaben, welche mich in den nächsten Raum bringen lösen.
-
-• Als Spieler möchte ich sehen wie viele münzen ich habe
-
-• Als Spieler möchte ich einen Raum verlassen können
-
-• Als Spieler möchte ich einen neuen Raum betreten können
 
 
-• Als Spieler möchte ich münzen einsammeln können die mir eine Belohnung geben (zum Beispiel. Mehr lebenspunkte).
-
-
-
-
-Zu Beginn von jedem Softwareprojekt steht die Anforderungsanalyse (Requirements Engineering). Hier werden die Anforderungen an das zukünftige Produkt formuliert. User Stories werden in der Business Sprache verfasst, d.h. verwende möglichst keine technischen Begriffe. Die User Stories sind priorisiert, vom Wichtigen zum Unwichtigen. Schreibe die User Stories in der abzuarbeitenden Rheinfolge:
-
-Funktionale-US- **01**
-
-
-| Funktionale-US-?? | Beschreibung |
+| Funktionale-US-01 | Beschreibung |
 | --- | --- |
 | User Story | Als Spieler möchte ich, dass die Figur sich von mir steuern lässt. |
 | Art | Muss |
-| Akzeptanzkriterien | Mit den Akzeptanzkriterien beschreibt der Anforderer, wie er die korrekte Umsetzung der User Story testen würde |
+| Akzeptanzkriterien | Wenn ich auf die Tasten a,d oder [LEERTASTE] drücke bewegt sich die figur in die gefählte Richtung |
 
-| Funktionale-US-?? | Beschreibung |
+| Funktionale-US-02 | Beschreibung |
 | --- | --- |
 | User Story | Als Spieler möchte ich einen Raum sehen |
 | Art | Muss |
-| Akzeptanzkriterien | Mit den Akzeptanzkriterien beschreibt der Anforderer, wie er die korrekte Umsetzung der User Story testen würde |
+| Akzeptanzkriterien | Wenn ich das Spiel beginne sehe ich ein Raum mit Blöcken, Items, |
 
-| Funktionale-US-?? | Beschreibung |
+| Funktionale-US-03 | Beschreibung |
 | --- | --- |
 | User Story | Als Spieler möchte ich einen GameScreen haben |
 | Art | Muss |
-| Akzeptanzkriterien | Mit den Akzeptanzkriterien beschreibt der Anforderer, wie er die korrekte Umsetzung der User Story testen würde |
+| Akzeptanzkriterien | Wenn ich das Hauptmenu verlasse beginnt das spiel |
 
-| Nichtfunktionale-US-?? | Beschreibung |
+| Funktionale-US-04 | Beschreibung |
 | --- | --- |
-| User Story | Als Projektleiter möchte ich, dass eine Projektplanung erstellt wird |
-| Art | Muss-Ziel |
-| Akzeptanzkriterien | Mit den Akzeptanzkriterien beschreibt der Anforderer, wie er die korrekte Umsetzung der User Story testen würde |
+| User Story | Als Spieler möchte ich mehrere Levels haben |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn ich den ersten Raum verlasse will betrete ich den zweiten Raum. |
 
-1.
+| Funktionale-US-05 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich einen Raum verlassen können |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn die Figur die Tür berührt verlässt sie den Raum |
+
+| Funktionale-US-06 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich einen neuen Raum betreten können |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn die Figur die Tür berührt betritt die den nächsten Raum |
+
+| Funktionale-US-07 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich einen GameOverScreen haben |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn die Figur all ihre Lebenspunkte verliert soll der GameOverScreen angezeigt werden. |
+
+| Funktionale-US-08 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich Items einsammeln können die mir eine Belohnung geben (zum Beispiel. Mehr lebenspunkte). |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn die Figur ein Herz einsammelt werden verlorene Lebenspunkte regeneriert. |
+
+| Funktionale-US-09 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich einen StartScreen haben. |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn ich das Spiel aufstarte sehe ich zuerst ein Hauptmenu. |
+
+| Funktionale-US-10 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich Hindernisse die mir eine Herausforderung darstellen haben. |
+| Art | Muss |
+| Akzeptanzkriterien | Wenn die Figur mit diesen Hindernissen in kontakt kommt verliert sie Lebenspunkte. |
+
+| Funktionale-US-11 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich sehen wie viele Lebenspunkte ich habe |
+| Art | Muss |
+| Akzeptanzkriterien | Während dem Spiel sehe ich in einer Anzeige oben am Bildschirm wie viele Lebenspunkte die Figur hat. |
+
+| Funktionale-US-12 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich einen GameWinScreen haben |
+| Art | Kann |
+| Akzeptanzkriterien | Nachdem ich alle Räume gelöst habe sehe ich einen GameWinScreen. |
+
+| Funktionale-US-13 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich Aufgaben, welche mich in den nächsten Raum bringen lösen. |
+| Art | Muss |
+| Akzeptanzkriterien | Um in den nächsten Raum zu gelangen muss die Figur Würfel auf knöpfe legen oder Schlüssel einsammeln. |
+
+| Funktionale-US-14 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich sehen wie viele münzen ich habe |
+| Art | Kann |
+| Akzeptanzkriterien | Während dem Spiel sehe ich in einer Anzeige oben am Bildschirm wie viele Münzen die Figur schon eingesammelt hat. |
+
+| Funktionale-US-15 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich münzen einsammeln können die mir Punkte geben. |
+| Art | Kann |
+| Akzeptanzkriterien | Wenn die Figur die Münze berührt soll sie verschwinden und die Anzahl eingesammelte Münzen soll um eins steigen. |
+
+| Nichtfunktionale-US-01 | Beschreibung |
+| --- | --- |
+| User Story | Als Spieler möchte ich Gegenspieler die mir eine Herausforderung darstellen. |
+| Art | Kann |
+| Akzeptanzkriterien | Wenn Die Figur den Gegenspieler berührt verliert sie lebenspunkte.  |
+| Begründung | Ein Gegenspieler hätte nicht zu dem Style des Spieles gepasst |
+
 # GUI Design
 
 
@@ -132,7 +175,8 @@ Funktionale-US- **01**
 
 ## ERM
 
-Ein vollständiges Entity-Relationship-Model der Datenbank.
+![ERM](./Mockup/ERM/ERM.png)
+
 
 1.
 
