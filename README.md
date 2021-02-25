@@ -107,12 +107,29 @@ Funktionale-US- **01**
 1.
 # GUI Design
 
-  1.
+
 ## Screen Design
 
-Dieser Abschnitt enthält alle Screen Designs inklusiv einer Textbeschreibung zu jedem Screen Design.
+![mockup_lucio](./Mockup/screens/screen%20(1).png)
+<br/><br/>
 
-  1.
+![mockup_lucio](./Mockup/screens/screen%20(2).png)
+<br/><br/>
+
+![mockup_lucio](./Mockup/screens/screen%20(3).png)
+<br/><br/>
+
+![mockup_lucio](./Mockup/screens/screen%20(4).png)
+<br/><br/>
+
+![mockup_lucio](./Mockup/screens/screen%20(5).png)
+<br/><br/>
+
+![mockup_lucio](./Mockup/screens/screen%20(6).png)
+<br/><br/>
+
+![mockup_lucio](./Mockup/screens/screen%20(7).png)
+
 ## ERM
 
 Ein vollständiges Entity-Relationship-Model der Datenbank.
