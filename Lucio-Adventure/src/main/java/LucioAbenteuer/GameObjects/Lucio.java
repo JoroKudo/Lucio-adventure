@@ -1,5 +1,8 @@
 package LucioAbenteuer.GameObjects;
-import LucioAbenteuer.*;
+
+import LucioAbenteuer.Direction;
+import LucioAbenteuer.Images;
+import LucioAbenteuer.KeyEventHandler;
 import javafx.scene.image.Image;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.MassType;
@@ -37,6 +40,7 @@ public class Lucio extends GameObject {
         if ((keyEventHandler.isRightKeyReleased() && isOnGround()) && (keyEventHandler.isLeftKeyReleased() && isOnGround())) {
             setLinearVelocity(0, 0);
         }
+
     }
     public void jump(double deltaInSec) {
         if (isOnGround()) {

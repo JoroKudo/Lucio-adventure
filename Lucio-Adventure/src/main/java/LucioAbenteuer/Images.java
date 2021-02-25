@@ -29,6 +29,7 @@ public class Images {
     public final static Image MIDHP = getImageSize("MidHP.png");
     public final static Image FULLHP = getImageSize("FullHP.png");
     public final static Image LASER_BEAM = getImageSize("LaserBeam.png");
+    public final static Image RED_LASER = getImageSize("laserobstacle.png");
     public final static Image GAMEOVER = getImageSize("GameOver.png");
     public final static Image SPIKES = getImageSize("Spikes.png");
     public final static Image LASERBUTTTON = getImageSize("ActivButton.png");
