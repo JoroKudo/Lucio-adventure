@@ -1,5 +1,4 @@
 package LucioAbenteuer.GameObjects;
-
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.transform.Affine;
@@ -11,15 +10,11 @@ import org.dyn4j.geometry.Rectangle;
 public abstract class GameObject extends Body {
 
     protected Image image;
-
     public GameObject(Image image, double x, double y) {
         this.image = image;
         this.translate(x, y);
-
         addFixture(new Rectangle(image.getWidth() / Const.BLOCK_SIZE, image.getHeight() / Const.BLOCK_SIZE));
     }
-
-
     public void draw(GraphicsContext gc) {
 
         Affine originTrans = gc.getTransform();

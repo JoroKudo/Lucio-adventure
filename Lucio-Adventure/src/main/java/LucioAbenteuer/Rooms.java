@@ -1,9 +1,7 @@
 package LucioAbenteuer;
-
 import org.dyn4j.dynamics.Body;
 import LucioAbenteuer.GameObjects.*;
 import org.dyn4j.world.World;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +9,6 @@ public class Rooms {
     public static ExitLight exitlight;
     public static int room =1;
     public static BigLaser  bl;
-
     public static String room1 =
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000000000000000000000W" +
@@ -20,16 +17,15 @@ public class Rooms {
                     "W0000000000000000000000000000W" +
                     "WC0000C0000000D00000000000000W" +
                     "W0000000000BBBBBBB00000000000W" +
-                    "W0000000000000000000000C0C0C0W" +
-                    "W000000000000000000000BB00BBBW" +
-                    "W000BBBBBBB000000000000SSSS00W" +
-                    "W0000000000000000000000BBBB00W" +
                     "W0000000000000000000000000000W" +
-                    "W000000000R000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0P00000000000000000000000000W" +
+                    "W000BBBBBBB000000000000C0C0C0W" +
+                    "W0000000000000000000000BBBBB0W" +
+                    "W0000000000000000000000000000W" +
+                    "W000000000R00000000BB00000000W" +
+                    "W0000000000000000000000000000W" +
+                    "W0P000000000000BB000000000000W" +
                     "WBBB0000000000000FF0000000000W";
-
 
     public static String room2 =
             "0000000000000L0000000000000000" +
@@ -49,23 +45,21 @@ public class Rooms {
                     "W0000000000000000000000000000W" +
                     "00F00000000000FF000000000000F0";
 
-
     public static String room3 =
-
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000B00000000000000000W" +
                     "W0000000000B00000000000000000W" +
-                    "W0000R00000B00000000000000000W" +
-                    "W000BB00000B00D0K000000000000W" +
+                    "W0000R00000B00000B0000000000CW" +
+                    "W000BB00000B00D0KB000BBB0000BW" +
                     "W0000000000BBBBBBB00000000000W" +
                     "WB0000000000000000000000R0000W" +
-                    "W0000000I0000C00C00000BBB0000W" +
-                    "W000B00BBB0000BBB0V0000000000W" +
+                    "W0000000I000000000000000BBB00W" +
+                    "W000B00BBB00000000V0000000000W" +
+                    "W000000000000000000BB00000000W" +
+                    "WB000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "WB0000000000000000000BB000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W00B0000000000000000000000000W" +
-                    "W0000B0B0BB0000B0B00000000000W" +
+                    "W00B00000000000000000C0000000W" +
+                    "W0000B0B0BB0000B0B000B0000000W" +
                     "WSSSSBBBSSSSSSSSSS0SSSSSSB0P0W" +
                     "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
@@ -77,34 +71,33 @@ public class Rooms {
                     "W000000D000000000000000000000W" +
                     "WC00BBBBBBB000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W00000000000C0C0C0C0000C00000W" +
-                    "WBB0BBBB000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
+                    "WBB0BBBB0000C0C0C0C0000C00000W" +
                     "W0000000000000000000000000000W" +
                     "W00000000R0000000000000000000W" +
                     "W000000000000000000000000R000W" +
-                    "W00000BBBB0000000000B000BBBBBW" +
-                    "W00000BBBB0000000000B000BBBBBW" +
-                    "WSSSSSBBBBSSSSSSSSSSB0P0BBBBBW" +
+                    "W00000BBBBB000000000B000BBBBBW" +
+                    "W00000BBBBB000000000B000BBBBBW" +
+                    "WSSSSSBBBBBSSSSSSSSSB0P0BBBBBW" +
                     "WBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
 
     public static String room5 =
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
+                    "W0000000000000000B00000000000W" +
+                    "W0000000000000000B00000000000W" +
+                    "W0000000000000D00B00000000000W" +
+                    "W0000C00000BBBBBBBBBBBB000000W" +
+                    "WC000B00000000000000000000000W" +
+                    "WB000000000000000000000000000W" +
+                    "W00000C00000C0C0C0C00000R0000W" +
+                    "WSSBBBBBSBBSBBBBBB0SSSSBBBB00W" +
+                    "WBBBBBBBBBBB000000BBBBB000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "WC0000C0000000D00000000000000W" +
-                    "W0000000000BBBBBBB00000000000W" +
-                    "W00000000000C0C0C0C0000C00000W" +
-                    "WBB0BBBB000000000000000000000W" +
-                    "W0000000000000000000000SSSS00W" +
-                    "W00000000000BBBBBBB0000BBBB00W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "W000000000R00000000000K00S000W" +
-                    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBW";
-
+                    "W00C0000000000R00000000000000W" +
+                    "W00BB000000BBBB000000000000BBW" +
+                    "W000000000000000000BBBBB00000W" +
+                    "W00000000000000000000000SSS00W" +
+                    "BBBBBBBBBBBBBBSSSSS0BBBBBBBBBW";
 
     public static List<Body> createRoom(String roomname) {
         final double ROW_LENGHT = 30;
@@ -134,10 +127,7 @@ public class Rooms {
         }
         return bodiesFromRoom;
     }
-
     public static void roomchanges(int room, World<Body> physicWorld) {
-
-
         switch (room) {
             case 1:
                 for (Body body : Rooms.createRoom(room1)) {
@@ -145,7 +135,6 @@ public class Rooms {
 
                     physicWorld.addBody(body);
                 }
-
                 break;
             case 2:
                 for (Body body : createRoom(room2)) {
@@ -157,7 +146,6 @@ public class Rooms {
                 for (Body body : createRoom(room3)) {
                     physicWorld.addBody(body);
                     Images.bgp = Images.LVL3;
-
                 }
                 break;
             case 4:
@@ -171,9 +159,6 @@ public class Rooms {
                     physicWorld.addBody(body);
                 }
                 break;
-
-
         }
-
     }
 }

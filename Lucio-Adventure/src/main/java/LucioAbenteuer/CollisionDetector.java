@@ -1,6 +1,4 @@
 package LucioAbenteuer;
-
-
 import LucioAbenteuer.GameObjects.*;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.Vector2;
@@ -16,8 +14,6 @@ public class CollisionDetector {
     private Body body2;
     private World<Body> physicWorld;
     private boolean playSoundOnce = true;
-
-
     public CollisionDetector(Facility facility, Score score, HealthBar healthBar) {
         this.facility = facility;
         this.score = score;
@@ -36,9 +32,7 @@ public class CollisionDetector {
         handleCubeLaser();
         handleLaserButton();
     }
-
     public void handleLucioCoin() {
-
         if (body1 instanceof Lucio && body2 instanceof Coin) {
             Coin coin;
             coin = (Coin) body2;
@@ -54,7 +48,6 @@ public class CollisionDetector {
         }
     }
     public void handleLucioHeart() {
-
         if (body1 instanceof Lucio && body2 instanceof Heart) {
             Heart heart;
             heart = (Heart) body2;
@@ -65,9 +58,7 @@ public class CollisionDetector {
         if ((body1 instanceof CompanionCube && body2 instanceof LaserButton) || (body2 instanceof CompanionCube && body1 instanceof LaserButton)) {
             System.out.println("activ");
             physicWorld.removeBody(Rooms.bl);
-
     }}
-
     public void handleLucioDoor() {
         if ((body1 instanceof Lucio && body2 instanceof Door && isOpen)) {
             Door door;
@@ -85,27 +76,18 @@ public class CollisionDetector {
                 Sound.play(SoundEffectType.DOOR_OPEN);
                 playSoundOnce = false;
             }
-
         }
-
     }
-
     public void handleLucioPain() {
 
         if ((body1 instanceof Lucio) && ((body2 instanceof Laser) || (body2 instanceof Spikes)  || (body2 instanceof BigLaser) )) {
-            facility.lucio = new Lucio(6, 12.5, facility.physicWorld, facility.keyEventHandler);
+            facility.lucio = new Lucio(6, 11.5, facility.physicWorld, facility.keyEventHandler);
             healthBar.life--;
-
             physicWorld.removeBody(body1);
-
-
                 Sound.play(SoundEffectType.HURT);
-
-
             physicWorld.addBody(facility.lucio);
         }
     }
-
     public void handleCubeLaser() {
 
         if (body1 instanceof CompanionCube && body2 instanceof Laser) {
