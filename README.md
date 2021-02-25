@@ -141,6 +141,8 @@ Unser Game Projekt ist angelehnt an das 2D Spiel Super Mario, allerdings ist das
 | Art | Kann |
 | Akzeptanzkriterien | Wenn die Figur die Münze berührt soll sie verschwinden und die Anzahl eingesammelte Münzen soll um eins steigen. |
 
+<br/><br/>
+
 | Nichtfunktionale-US-01 | Beschreibung |
 | --- | --- |
 | User Story | Als Spieler möchte ich Gegenspieler die mir eine Herausforderung darstellen. |
@@ -154,31 +156,41 @@ Unser Game Projekt ist angelehnt an das 2D Spiel Super Mario, allerdings ist das
 ## Screen Design
 
 ![mockup_lucio](./Mockup/screens/screen%20(1).png)
+StartScreen
 <br/><br/>
 
 ![mockup_lucio](./Mockup/screens/screen%20(2).png)
+GameScreen LVL1
 <br/><br/>
 
 ![mockup_lucio](./Mockup/screens/screen%20(3).png)
+GameScreen LVL2
+
 <br/><br/>
 
 ![mockup_lucio](./Mockup/screens/screen%20(4).png)
+GameScreen LVL3
+
 <br/><br/>
 
 ![mockup_lucio](./Mockup/screens/screen%20(5).png)
+GameScreen LVL4
+
 <br/><br/>
 
 ![mockup_lucio](./Mockup/screens/screen%20(6).png)
+GameOverScreen
 <br/><br/>
 
 ![mockup_lucio](./Mockup/screens/screen%20(7).png)
+GameWinScreen
 
 ## ERM
 
 ![ERM](./Mockup/ERM/ERM.png)
 
 
-1.
+
 
 # Fazit
 
