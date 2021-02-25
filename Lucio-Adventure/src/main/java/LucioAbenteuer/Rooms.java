@@ -1,6 +1,9 @@
 package LucioAbenteuer;
 
 import LucioAbenteuer.GameObjects.*;
+import LucioAbenteuer.game.Const;
+import LucioAbenteuer.game.ExitLight;
+import LucioAbenteuer.game.Images;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.world.World;
 
@@ -16,8 +19,8 @@ public class Rooms {
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
-                    "WC0000C0000000D00000000000000W" +
+                    "W0000000000000D00000000000000W" +
+                    "WC0000C0000000000000000000000W" +
                     "W0000000000BBBBBBB00000000000W" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
@@ -33,17 +36,17 @@ public class Rooms {
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W000000000000L000000000000000W" +
                     "W000000000000L000000000000000W" +
-                    "W000K00000000L000000000000000W" +
-                    "W0BBB00000000L0R0000000000D00W" +
+                    "W000000000000L000000000000D00W" +
+                    "W0BBB00000000L0R0000000000000W" +
                     "W0BBB00000000L0000000000BBBBBW" +
-                    "WCBBB0000C000LBBBBB0000000000W" +
+                    "W0BBB0000C000LBBBBB0000000000W" +
                     "W000000000000L00000BB00000000W" +
                     "W0000000000B0L0C0C0C0C0C00000W" +
                     "W000000BBBBB0L000000000000000W" +
                     "W0000P0B00000L000000000000000W" +
                     "W000BBBB00000BBBBBBBBBBBB0000W" +
                     "W0000000000000000000000000000W" +
-                    "W00000000000K0000HHH000000000W" +
+                    "W0000000000000000HHH000000000W" +
                     "W0000000000000000000000000000W" +
                     "00F00000000000FF000000000000FW";
 
@@ -51,8 +54,8 @@ public class Rooms {
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000B00000000000000000W" +
                     "W0000000000B00000000000000000W" +
-                    "W00000R0000B0000000000R00000CW" +
-                    "W0000BBB000B00D000000BBB0000BW" +
+                    "W00000R0000B00D0000000R00000CW" +
+                    "W0000BBB000B000000000BBB0000BW" +
                     "WC00000B000BBBBBBB00000B00000W" +
                     "WB00000B000B00000000000B00000W" +
                     "W000000B0I0B00000000000BBBB00W" +
@@ -69,8 +72,8 @@ public class Rooms {
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
-                    "W0000000000000000000000000000W" +
                     "W000000D000000000000000000000W" +
+                    "W0000000000000000000000000000W" +
                     "WC00BBBBBBB000000000000000000W" +
                     "W0000000000000000000000000000W" +
                     "W0000000000000000000000000000W" +
@@ -86,14 +89,14 @@ public class Rooms {
     public static String room5 =
             "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" +
                     "W0000000000000000B00000000000W" +
-                    "W0000000000000000B0K000000000W" +
-                    "W00000C0000000D00B0H000000000W" +
-                    "W00000B0000BBBBBBBBBB00000000W" +
+                    "W0000000000000D00B0o0000000H0W" +
+                    "W00000C0000000000B00000000K00W" +
+                    "W00000B0000BBBBBBB00000000BBBB" +
                     "WC000000000000000000000000000W" +
                     "WB000000000000C00000000000000W" +
                     "W00000C00000C0H0C0000000R0000W" +
-                    "WQQQBBBBQQQBBBBBBBS00SBBBB000W" +
-                    "W0000000000000000BBBBBB000000W" +
+                    "WQQQBBBBQQQBBBBBBBBz00sBBB000W" +
+                    "W00000000000000000BBBBBB00000W" +
                     "W0000000000000000000000000000W" +
                     "W00C0000000000R00000000000000W" +
                     "W00BB000000BBBB000000000000BBW" +
@@ -112,7 +115,11 @@ public class Rooms {
             switch (symb) {
                 case 'B' -> bodiesFromRoom.add(new Block(x, y));
                 case 'W' -> bodiesFromRoom.add(new Wall(x, y));
-                case 'S' -> bodiesFromRoom.add(new Spikes(x, y));
+                case 'S' -> bodiesFromRoom.add(new Spikes(x, y, Images.SPIKES));
+                case 's' -> bodiesFromRoom.add(new Spikes(x, y, Images.SPIKES_SMOLL));
+                case 'z' -> bodiesFromRoom.add(new Spikes(x, y, Images.SPIKES_SMOLR));
+
+
                 case 'C' -> bodiesFromRoom.add(new Coin(x, y));
                 case 'F' -> bodiesFromRoom.add(new Floor(x, y));
                 case 'H' -> bodiesFromRoom.add(new Heart(x, y));

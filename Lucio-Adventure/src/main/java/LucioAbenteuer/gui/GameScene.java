@@ -1,9 +1,10 @@
 package LucioAbenteuer.gui;
-import LucioAbenteuer.*;
+
 import LucioAbenteuer.common.BaseScene;
 import LucioAbenteuer.common.FancyAnimationTimer;
 import LucioAbenteuer.common.Initializable;
 import LucioAbenteuer.common.Navigator;
+import LucioAbenteuer.game.*;
 
 public class GameScene extends BaseScene implements Initializable {
     public GameScene(Navigator navigator) {
@@ -16,7 +17,6 @@ public class GameScene extends BaseScene implements Initializable {
         this.setOnKeyPressed(keyEventHandler);
         this.setOnKeyReleased(keyEventHandler);
         Sound.play(MusicType.BACKGROUND);
-        //gc.drawImage(Images.bgp, 0, 0);
         Facility facility = new Facility(keyEventHandler, navigator);
         facility.load();
         FancyAnimationTimer gameLoop = new FancyAnimationTimer() {
@@ -25,6 +25,7 @@ public class GameScene extends BaseScene implements Initializable {
                 facility.update(deltaInSec)
                 ;
                 facility.draw(canvas.getGraphicsContext2D());
+
             }
         };
         gameLoop.start();

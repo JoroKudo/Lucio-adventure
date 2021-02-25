@@ -1,7 +1,10 @@
 package LucioAbenteuer.GameObjects;
+
+import LucioAbenteuer.Rooms;
+import LucioAbenteuer.game.Facility;
+import LucioAbenteuer.game.Images;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.MassType;
-import LucioAbenteuer.*;
 import org.dyn4j.world.World;
 
 public class Door extends GameObject {
@@ -9,7 +12,9 @@ public class Door extends GameObject {
         super(Images.DOOR, x, y);
         setMass(MassType.INFINITE);
     }
-    public boolean leave( World<Body> physicWorld,  Facility facility){
+
+    public boolean leave(World<Body> physicWorld, Facility facility) {
+
         Rooms.room++;
         facility.lucio = new Lucio(6, 11.5, physicWorld, facility.keyEventHandler);
         physicWorld.removeAllBodies();

@@ -1,5 +1,9 @@
 package LucioAbenteuer.GameObjects;
-import LucioAbenteuer.*;
+
+import LucioAbenteuer.Rooms;
+import LucioAbenteuer.game.Images;
+import LucioAbenteuer.game.Sound;
+import LucioAbenteuer.game.SoundEffectType;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.MassType;
 import org.dyn4j.world.World;

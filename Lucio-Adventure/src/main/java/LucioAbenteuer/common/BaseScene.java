@@ -1,5 +1,6 @@
 package LucioAbenteuer.common;
-import LucioAbenteuer.Const;
+
+import LucioAbenteuer.game.Const;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -9,6 +10,7 @@ import javafx.scene.image.Image;
 public abstract class BaseScene extends Scene {
     protected final Navigator navigator;
     protected final Canvas canvas;
+
     protected BaseScene(Navigator navigator) {
         super(new Group());
         this.navigator = navigator;

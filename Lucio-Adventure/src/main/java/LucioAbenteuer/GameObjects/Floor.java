@@ -1,5 +1,5 @@
 package LucioAbenteuer.GameObjects;
-import LucioAbenteuer.*;
+import LucioAbenteuer.game.Images;
 import org.dyn4j.geometry.MassType;
 
 public class Floor extends GameObject {

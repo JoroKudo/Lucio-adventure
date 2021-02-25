@@ -2,9 +2,9 @@ package LucioAbenteuer.gui;
 import LucioAbenteuer.common.BaseScene;
 import LucioAbenteuer.common.Initializable;
 import LucioAbenteuer.common.Navigator;
-import LucioAbenteuer.Images;
-import LucioAbenteuer.MusicType;
-import LucioAbenteuer.Sound;
+import LucioAbenteuer.game.Images;
+import LucioAbenteuer.game.MusicType;
+import LucioAbenteuer.game.Sound;
 import javafx.scene.input.KeyCode;
 
 public class WelcomeScene extends BaseScene implements Initializable {

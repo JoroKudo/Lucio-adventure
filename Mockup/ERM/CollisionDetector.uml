@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>LucioAbenteuer.CollisionDetector</OriginalElement>
+  <nodes>
+    <node x="685.0666666666666" y="1115.0">javafx.event.EventHandler</node>
+    <node x="0.0" y="710.0">LucioAbenteuer.GameObjects.Floor</node>
+    <node x="165.0" y="1615.0">LucioAbenteuer.main.Launcher</node>
+    <node x="1308.0" y="710.0">LucioAbenteuer.GameObjects.Wall</node>
+    <node x="653.75" y="0.0">org.dyn4j.DataContainer</node>
+    <node x="979.7833333333334" y="90.0">org.dyn4j.geometry.Shiftable</node>
+    <node x="108.0" y="710.0">LucioAbenteuer.GameObjects.CompanionCube</node>
+    <node x="320.33333333333337" y="90.0">org.dyn4j.geometry.Transformable</node>
+    <node x="1320.0" y="1270.0">LucioAbenteuer.ExitLight</node>
+    <node x="1485.0" y="1270.0">LucioAbenteuer.common.Navigator</node>
+    <node x="1091.0" y="1270.0">LucioAbenteuer.CollisionDetector</node>
+    <node x="855.7833333333334" y="90.0">org.dyn4j.Ownable</node>
+    <node x="1041.0666666666666" y="1115.0">LucioAbenteuer.Facility</node>
+    <node x="910.0" y="1270.0">javafx.application.Application</node>
+    <node x="736.0" y="710.0">LucioAbenteuer.GameObjects.Door</node>
+    <node x="763.2861581920906" y="400.0">org.dyn4j.dynamics.AbstractPhysicsBody</node>
+    <node x="278.0" y="1035.0">java.lang.Enum</node>
+    <node x="488.9" y="1115.0">LucioAbenteuer.Direction</node>
+    <node x="280.0" y="710.0">LucioAbenteuer.GameObjects.Key</node>
+    <node x="0.0" y="1615.0">LucioAbenteuer.HealthBar</node>
+    <node x="255.28615819209062" y="0.0">org.dyn4j.geometry.Rotatable</node>
+    <node x="838.2641242937857" y="570.0">LucioAbenteuer.GameObjects.GameObject</node>
+    <node x="865.0666666666666" y="945.0">java.lang.Cloneable</node>
+    <node x="1078.0666666666666" y="865.0">java.util.Collection</node>
+    <node x="188.0" y="1115.0">LucioAbenteuer.MusicType</node>
+    <node x="713.0666666666666" y="1035.0">javafx.event.Event</node>
+    <node x="266.77777777777777" y="1270.0">javafx.event.EventTarget</node>
+    <node x="0.0" y="1540.0">LucioAbenteuer.gui.WelcomeScene</node>
+    <node x="143.0" y="1430.0">LucioAbenteuer.common.Initializable</node>
+    <node x="624.0666666666666" y="945.0">java.io.Serializable</node>
+    <node x="821.0666666666666" y="1035.0">java.util.EventListener</node>
+    <node x="685.0" y="1270.0">javafx.animation.AnimationTimer</node>
+    <node x="328.0" y="1115.0">LucioAbenteuer.gui.SceneType</node>
+    <node x="944.0" y="710.0">LucioAbenteuer.GameObjects.Laser</node>
+    <node x="1102.0666666666666" y="945.0">java.util.List</node>
+    <node x="526.2861581920906" y="310.0">org.dyn4j.collision.AbstractCollisionBody</node>
+    <node x="665.0" y="1350.0">LucioAbenteuer.common.FancyAnimationTimer</node>
+    <node x="372.0" y="710.0">LucioAbenteuer.GameObjects.Button</node>
+    <node x="422.77777777777777" y="1270.0">javafx.beans.DefaultProperty</node>
+    <node x="328.0" y="1540.0">LucioAbenteuer.gui.GameOverScene</node>
+    <node x="322.0" y="1615.0">LucioAbenteuer.Images</node>
+    <node x="367.0" y="1430.0">LucioAbenteuer.common.BaseScene</node>
+    <node x="164.0" y="1540.0">LucioAbenteuer.gui.GameWonScene</node>
+    <node x="1052.0" y="710.0">LucioAbenteuer.GameObjects.LaserButton</node>
+    <node x="862.2641242937857" y="490.0">org.dyn4j.dynamics.Body</node>
+    <node x="993.0666666666666" y="1035.0">java.util.concurrent.CopyOnWriteArrayList</node>
+    <node x="383.0" y="1350.0">javafx.scene.Scene</node>
+    <node x="610.6000000000001" y="90.0">org.dyn4j.collision.Fixture</node>
+    <node x="500.0" y="1540.0">LucioAbenteuer.gui.GameScene</node>
+    <node x="463.0" y="1615.0">LucioAbenteuer.Rooms</node>
+    <node x="596.0" y="1615.0">LucioAbenteuer.Score</node>
+    <node x="1086.0666666666666" y="785.0">java.lang.Iterable</node>
+    <node x="729.0" y="1615.0">LucioAbenteuer.Sound</node>
+    <node x="1202.0666666666666" y="945.0">java.util.RandomAccess</node>
+    <node x="483.16666666666663" y="1035.0">java.lang.FunctionalInterface</node>
+    <node x="604.0" y="710.0">LucioAbenteuer.GameObjects.BigLaser</node>
+    <node x="942.0" y="1350.0">LucioAbenteuer.main.App</node>
+    <node x="1516.0" y="710.0">LucioAbenteuer.GameObjects.Lucio</node>
+    <node x="836.0" y="710.0">LucioAbenteuer.GameObjects.Heart</node>
+    <node x="488.0" y="710.0">LucioAbenteuer.GameObjects.Spikes</node>
+    <node x="0.0" y="1115.0">LucioAbenteuer.SoundEffectType</node>
+    <node x="316.66666666666663" y="945.0">java.lang.constant.Constable</node>
+    <node x="673.0666666666666" y="1195.0">LucioAbenteuer.KeyEventHandler</node>
+    <node x="1208.0" y="710.0">LucioAbenteuer.GameObjects.Coin</node>
+    <node x="1408.0" y="710.0">LucioAbenteuer.GameObjects.Block</node>
+    <node x="862.0" y="1615.0">LucioAbenteuer.Const</node>
+    <node x="395.2861581920906" y="0.0">org.dyn4j.geometry.Translatable</node>
+    <node x="168.66666666666663" y="945.0">java.lang.Comparable</node>
+    <node x="953.0833333333334" y="310.0">org.dyn4j.dynamics.PhysicsBody</node>
+    <node x="728.95" y="210.0">org.dyn4j.collision.CollisionBody</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="LucioAbenteuer.common.BaseScene" target="javafx.scene.Scene">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.GameObject" target="org.dyn4j.dynamics.Body">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.Facility" target="java.util.concurrent.CopyOnWriteArrayList">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.AbstractCollisionBody" target="org.dyn4j.geometry.Transformable">
+      <point x="-86.39999999999998" y="-15.0" />
+      <point x="547.8861581920906" y="280.0" />
+      <point x="589.1000000000001" y="280.0" />
+      <point x="589.1000000000001" y="170.0" />
+      <point x="396.33333333333337" y="170.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.CopyOnWriteArrayList" target="java.util.RandomAccess">
+      <point x="78.0" y="-15.0" />
+      <point x="1175.0666666666666" y="1015.0" />
+      <point x="1274.0666666666666" y="1015.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.AbstractCollisionBody" target="org.dyn4j.Ownable">
+      <point x="43.200000000000045" y="-15.0" />
+      <point x="677.4861581920907" y="290.0" />
+      <point x="647.6000000000001" y="290.0" />
+      <point x="647.6000000000001" y="170.0" />
+      <point x="866.1833333333334" y="170.0" />
+      <point x="-41.60000000000002" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.CopyOnWriteArrayList" target="java.lang.Cloneable">
+      <point x="-26.0" y="-15.0" />
+      <point x="1071.0666666666666" y="995.0" />
+      <point x="955.0666666666666" y="995.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.AbstractPhysicsBody" target="org.dyn4j.geometry.Transformable">
+      <point x="-83.33333333333337" y="-15.0" />
+      <point x="779.9528248587573" y="380.0" />
+      <point x="451.8361581920906" y="380.0" />
+      <point x="451.8361581920906" y="180.0" />
+      <point x="365.9333333333334" y="180.0" />
+      <point x="-30.399999999999977" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.MusicType" target="java.lang.Enum">
+      <point x="0.0" y="-15.0" />
+      <point x="248.0" y="1095.0" />
+      <point x="308.0" y="1095.0" />
+      <point x="-10.0" y="15.0" />
+    </edge>
+    <edge source="javafx.event.EventHandler" target="java.util.EventListener">
+      <point x="48.0" y="-15.0" />
+      <point x="805.0666666666666" y="1095.0" />
+      <point x="897.0666666666666" y="1095.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.Collection" target="java.lang.Iterable">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.WelcomeScene" target="LucioAbenteuer.common.Initializable">
+      <point x="-36.0" y="-15.0" />
+      <point x="36.0" y="1500.0" />
+      <point x="162.0" y="1500.0" />
+      <point x="-57.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.Direction" target="java.lang.Enum">
+      <point x="0.0" y="-15.0" />
+      <point x="548.9" y="1085.0" />
+      <point x="348.0" y="1085.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.SoundEffectType" target="java.lang.Enum">
+      <point x="0.0" y="-15.0" />
+      <point x="84.0" y="1085.0" />
+      <point x="288.0" y="1085.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.LaserButton" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="1120.0" y="680.0" />
+      <point x="925.1212671509286" y="680.0" />
+      <point x="22.85714285714289" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Lucio" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="1560.0" y="640.0" />
+      <point x="961.692695722357" y="640.0" />
+      <point x="59.42857142857133" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.AbstractPhysicsBody" target="org.dyn4j.collision.AbstractCollisionBody">
+      <point x="-16.66666666666663" y="-15.0" />
+      <point x="846.619491525424" y="360.0" />
+      <point x="634.2861581920906" y="360.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.constant.Constable">
+      <point x="0.0" y="-15.0" />
+      <point x="318.0" y="1005.0" />
+      <point x="376.66666666666663" y="1005.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.BigLaser" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="660.0" y="670.0" />
+      <point x="888.5498385794999" y="670.0" />
+      <point x="-13.71428571428578" y="15.0" />
+    </edge>
+    <edge source="javafx.event.EventHandler" target="javafx.event.Event">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.WelcomeScene" target="LucioAbenteuer.common.BaseScene">
+      <point x="36.0" y="-15.0" />
+      <point x="108.0" y="1510.0" />
+      <point x="382.0" y="1510.0" />
+      <point x="-45.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.CollisionBody" target="org.dyn4j.geometry.Shiftable">
+      <point x="60.799999999999955" y="-15.0" />
+      <point x="865.75" y="190.0" />
+      <point x="1009.7833333333334" y="190.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.Body" target="org.dyn4j.collision.CollisionBody">
+      <point x="-20.0" y="-15.0" />
+      <point x="882.2641242937857" y="460.0" />
+      <point x="752.7861581920906" y="460.0" />
+      <point x="752.7861581920906" y="290.0" />
+      <point x="785.95" y="290.0" />
+      <point x="-19.0" y="15.0" />
+    </edge>
+    <edge source="javafx.scene.Scene" target="javafx.event.EventTarget">
+      <point x="-22.0" y="-15.0" />
+      <point x="405.0" y="1325.0" />
+      <point x="334.77777777777777" y="1325.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.Comparable">
+      <point x="-26.666666666666686" y="-15.0" />
+      <point x="291.3333333333333" y="1015.0" />
+      <point x="232.66666666666663" y="1015.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Floor" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="44.0" y="620.0" />
+      <point x="842.8355528652141" y="620.0" />
+      <point x="-59.428571428571445" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.geometry.Transformable" target="org.dyn4j.geometry.Rotatable">
+      <point x="-37.99999999999994" y="-15.0" />
+      <point x="358.3333333333334" y="70.0" />
+      <point x="315.2861581920906" y="70.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.Body" target="org.dyn4j.dynamics.AbstractPhysicsBody">
+      <point x="-6.666666666666629" y="-15.0" />
+      <point x="895.597457627119" y="450.0" />
+      <point x="863.2861581920906" y="450.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.CollisionBody" target="org.dyn4j.geometry.Transformable">
+      <point x="-60.799999999999955" y="-15.0" />
+      <point x="744.1500000000001" y="150.0" />
+      <point x="457.1333333333334" y="150.0" />
+      <point x="60.80000000000001" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.AbstractCollisionBody" target="org.dyn4j.DataContainer">
+      <point x="-43.19999999999993" y="-15.0" />
+      <point x="591.0861581920907" y="290.0" />
+      <point x="600.1000000000001" y="290.0" />
+      <point x="600.1000000000001" y="60.0" />
+      <point x="691.75" y="60.0" />
+      <point x="-38.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Spikes" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="536.0" y="660.0" />
+      <point x="879.4069814366428" y="660.0" />
+      <point x="-22.85714285714289" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Heart" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="880.0" y="690.0" />
+      <point x="906.8355528652141" y="690.0" />
+      <point x="4.571428571428555" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.GameWonScene" target="LucioAbenteuer.common.Initializable">
+      <point x="-36.0" y="-15.0" />
+      <point x="-19.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Key" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="316.0" y="640.0" />
+      <point x="861.1212671509286" y="640.0" />
+      <point x="-41.14285714285711" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.PhysicsBody" target="org.dyn4j.Ownable">
+      <point x="0.0" y="-15.0" />
+      <point x="1021.0833333333334" y="290.0" />
+      <point x="1022.5333333333334" y="290.0" />
+      <point x="1022.5333333333334" y="180.0" />
+      <point x="928.5833333333334" y="180.0" />
+      <point x="20.799999999999955" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.main.App" target="javafx.application.Application">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.PhysicsBody" target="org.dyn4j.DataContainer">
+      <point x="54.40000000000009" y="-15.0" />
+      <point x="1075.4833333333336" y="290.0" />
+      <point x="1110.2833333333333" y="290.0" />
+      <point x="1110.2833333333333" y="60.0" />
+      <point x="767.75" y="60.0" />
+      <point x="38.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.GameOverScene" target="LucioAbenteuer.common.BaseScene">
+      <point x="38.0" y="-15.0" />
+      <point x="15.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.CopyOnWriteArrayList" target="java.util.List">
+      <point x="26.0" y="-15.0" />
+      <point x="1123.0666666666666" y="1015.0" />
+      <point x="1142.0666666666666" y="1015.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.Body" target="org.dyn4j.geometry.Transformable">
+      <point x="-33.33333333333337" y="-15.0" />
+      <point x="868.9307909604522" y="470.0" />
+      <point x="440.8361581920906" y="470.0" />
+      <point x="440.8361581920906" y="190.0" />
+      <point x="335.53333333333336" y="190.0" />
+      <point x="-60.80000000000001" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.AbstractCollisionBody" target="org.dyn4j.collision.Fixture">
+      <point x="0.0" y="-15.0" />
+      <point x="634.2861581920906" y="290.0" />
+      <point x="636.6000000000001" y="290.0" />
+      <point x="-26.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.Body" target="org.dyn4j.Ownable">
+      <point x="20.0" y="-15.0" />
+      <point x="922.2641242937857" y="460.0" />
+      <point x="1127.8333333333335" y="460.0" />
+      <point x="1127.8333333333335" y="170.0" />
+      <point x="949.3833333333334" y="170.0" />
+      <point x="41.60000000000002" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.Body" target="org.dyn4j.dynamics.PhysicsBody">
+      <point x="6.666666666666629" y="-15.0" />
+      <point x="908.9307909604522" y="450.0" />
+      <point x="1055.0833333333335" y="450.0" />
+      <point x="34.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.Body" target="org.dyn4j.DataContainer">
+      <point x="33.33333333333337" y="-15.0" />
+      <point x="935.597457627119" y="470.0" />
+      <point x="1138.8333333333335" y="470.0" />
+      <point x="1138.8333333333335" y="50.0" />
+      <point x="793.0833333333333" y="50.0" />
+      <point x="63.33333333333326" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.PhysicsBody" target="org.dyn4j.geometry.Shiftable">
+      <point x="27.200000000000045" y="-15.0" />
+      <point x="1048.2833333333333" y="290.0" />
+      <point x="1069.7833333333333" y="290.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Button" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="420.0" y="650.0" />
+      <point x="870.2641242937857" y="650.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.KeyEventHandler" target="javafx.event.EventHandler">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.GameWonScene" target="LucioAbenteuer.common.BaseScene">
+      <point x="36.0" y="-15.0" />
+      <point x="272.0" y="1520.0" />
+      <point x="412.0" y="1520.0" />
+      <point x="-15.0" y="15.0" />
+    </edge>
+    <edge source="javafx.event.Event" target="java.io.Serializable">
+      <point x="-22.0" y="-15.0" />
+      <point x="735.0666666666666" y="1015.0" />
+      <point x="696.0666666666666" y="1015.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="javafx.event.EventHandler" target="java.lang.FunctionalInterface">
+      <point x="-48.0" y="-15.0" />
+      <point x="709.0666666666666" y="1095.0" />
+      <point x="583.1666666666666" y="1095.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="javafx.scene.Scene" target="javafx.beans.DefaultProperty">
+      <point x="22.0" y="-15.0" />
+      <point x="449.0" y="1325.0" />
+      <point x="506.77777777777777" y="1325.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.GameScene" target="LucioAbenteuer.common.BaseScene">
+      <point x="30.0" y="-15.0" />
+      <point x="590.0" y="1480.0" />
+      <point x="472.0" y="1480.0" />
+      <point x="45.0" y="15.0" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.io.Serializable">
+      <point x="26.666666666666686" y="-15.0" />
+      <point x="344.6666666666667" y="1015.0" />
+      <point x="648.0666666666666" y="1015.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="java.util.List" target="java.util.Collection">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.PhysicsBody" target="org.dyn4j.collision.CollisionBody">
+      <point x="-27.200000000000045" y="-15.0" />
+      <point x="993.8833333333333" y="260.0" />
+      <point x="861.95" y="260.0" />
+      <point x="57.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.AbstractCollisionBody" target="org.dyn4j.collision.CollisionBody">
+      <point x="86.39999999999998" y="-15.0" />
+      <point x="720.6861581920906" y="280.0" />
+      <point x="747.95" y="280.0" />
+      <point x="-57.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.common.FancyAnimationTimer" target="javafx.animation.AnimationTimer">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.CollisionBody" target="org.dyn4j.collision.Fixture">
+      <point x="-30.399999999999977" y="-15.0" />
+      <point x="774.5500000000001" y="140.0" />
+      <point x="688.6000000000001" y="140.0" />
+      <point x="26.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Wall" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="1348.0" y="660.0" />
+      <point x="943.4069814366428" y="660.0" />
+      <point x="41.14285714285711" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.AbstractPhysicsBody" target="org.dyn4j.DataContainer">
+      <point x="-50.0" y="-15.0" />
+      <point x="813.2861581920906" y="370.0" />
+      <point x="515.7861581920906" y="370.0" />
+      <point x="515.7861581920906" y="50.0" />
+      <point x="666.4166666666667" y="50.0" />
+      <point x="-63.33333333333337" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Block" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="1452.0" y="650.0" />
+      <point x="952.5498385794999" y="650.0" />
+      <point x="50.28571428571422" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.CompanionCube" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="184.0" y="630.0" />
+      <point x="851.9784100080713" y="630.0" />
+      <point x="-50.285714285714334" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.CollisionBody" target="org.dyn4j.DataContainer">
+      <point x="0.0" y="-15.0" />
+      <point x="804.95" y="70.0" />
+      <point x="742.4166666666667" y="70.0" />
+      <point x="12.666666666666629" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Laser" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="988.0" y="690.0" />
+      <point x="915.9784100080713" y="690.0" />
+      <point x="13.714285714285666" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.GameOverScene" target="LucioAbenteuer.common.Initializable">
+      <point x="-38.0" y="-15.0" />
+      <point x="366.0" y="1500.0" />
+      <point x="238.0" y="1500.0" />
+      <point x="19.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Coin" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="1248.0" y="670.0" />
+      <point x="934.2641242937857" y="670.0" />
+      <point x="32.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.AbstractPhysicsBody" target="org.dyn4j.Ownable">
+      <point x="50.0" y="-15.0" />
+      <point x="913.2861581920906" y="380.0" />
+      <point x="907.7833333333334" y="380.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.CollisionBody" target="org.dyn4j.Ownable">
+      <point x="30.399999999999977" y="-15.0" />
+      <point x="835.35" y="180.0" />
+      <point x="886.9833333333335" y="180.0" />
+      <point x="-20.799999999999955" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.GameScene" target="LucioAbenteuer.common.Initializable">
+      <point x="-30.0" y="-15.0" />
+      <point x="530.0" y="1490.0" />
+      <point x="276.0" y="1490.0" />
+      <point x="57.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.collision.Fixture" target="org.dyn4j.DataContainer">
+      <point x="0.0" y="-15.0" />
+      <point x="662.6000000000001" y="70.0" />
+      <point x="717.0833333333335" y="70.0" />
+      <point x="-12.666666666666629" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.geometry.Transformable" target="org.dyn4j.geometry.Translatable">
+      <point x="38.00000000000006" y="-15.0" />
+      <point x="434.3333333333334" y="70.0" />
+      <point x="467.2861581920906" y="70.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.PhysicsBody" target="org.dyn4j.geometry.Transformable">
+      <point x="-54.39999999999998" y="-15.0" />
+      <point x="966.6833333333334" y="270.0" />
+      <point x="618.3500000000001" y="270.0" />
+      <point x="618.3500000000001" y="160.0" />
+      <point x="426.7333333333334" y="160.0" />
+      <point x="30.400000000000034" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.gui.SceneType" target="java.lang.Enum">
+      <point x="0.0" y="-15.0" />
+      <point x="388.0" y="1095.0" />
+      <point x="328.0" y="1095.0" />
+      <point x="10.0" y="15.0" />
+    </edge>
+    <edge source="java.util.concurrent.CopyOnWriteArrayList" target="java.io.Serializable">
+      <point x="-78.0" y="-15.0" />
+      <point x="1019.0666666666666" y="1005.0" />
+      <point x="744.0666666666666" y="1005.0" />
+      <point x="48.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.AbstractPhysicsBody" target="org.dyn4j.dynamics.PhysicsBody">
+      <point x="83.33333333333337" y="-15.0" />
+      <point x="946.619491525424" y="380.0" />
+      <point x="987.0833333333334" y="380.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="javafx.event.Event" target="java.lang.Cloneable">
+      <point x="22.0" y="-15.0" />
+      <point x="779.0666666666666" y="1015.0" />
+      <point x="895.0666666666666" y="1015.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="org.dyn4j.dynamics.AbstractPhysicsBody" target="org.dyn4j.collision.CollisionBody">
+      <point x="16.66666666666663" y="-15.0" />
+      <point x="879.9528248587573" y="380.0" />
+      <point x="864.5782485875709" y="380.0" />
+      <point x="864.5782485875709" y="290.0" />
+      <point x="823.95" y="290.0" />
+      <point x="19.0" y="15.0" />
+    </edge>
+    <edge source="LucioAbenteuer.GameObjects.Door" target="LucioAbenteuer.GameObjects.GameObject">
+      <point x="0.0" y="-15.0" />
+      <point x="776.0" y="680.0" />
+      <point x="897.692695722357" y="680.0" />
+      <point x="-4.571428571428555" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5165165165165166" x="896.0859902475619" y="500.14825581395337" />
+  <SelectedNodes>
+    <node>LucioAbenteuer.CollisionDetector</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

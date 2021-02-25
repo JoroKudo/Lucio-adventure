@@ -1,5 +1,5 @@
 package LucioAbenteuer.GameObjects;
-import LucioAbenteuer.Images;
+import LucioAbenteuer.game.Images;
 import org.dyn4j.geometry.MassType;
 
 public class BigLaser extends GameObject {

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da2f8f4a-1c2c-4cdf-ab88-79ffb0a037dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Facility$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Facility$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Facility.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Facility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/GameObjects/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/GameObjects/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/GameObjects/Lucio.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/GameObjects/Lucio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/GameObjects/Spikes.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/GameObjects/Spikes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Rooms.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Rooms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Sound$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Sound$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/Sound.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/SoundEffectType.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/SoundEffectType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/gui/GameOverScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/gui/GameScene$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/gui/GameScene$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/gui/GameScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/classes/java/main/LucioAbenteuer/gui/GameScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/resources/main/Images/Door.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/resources/main/Images/Door.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/resources/main/Images/Spikes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/resources/main/Images/Spikes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/CollisionDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Facility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/BigLaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/BigLaser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/CompanionCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/CompanionCube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Heart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Lucio.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Lucio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Spikes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Spikes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/GameObjects/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Rooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Rooms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/SoundEffectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/SoundEffectType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/common/BaseScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/common/BaseScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/gui/GameOverScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/gui/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/gui/GameWonScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/java/LucioAbenteuer/gui/GameWonScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/resources/Images/Door.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/resources/Images/Door.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lucio-Adventure/src/main/resources/Images/Spikes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lucio-Adventure/src/main/resources/Images/Spikes.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ovpJupV57Q4adQM742Bq4hSvX1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Lucio-Adventure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\BBC\IdeaProjects\lucio-s-abenteuer\Mockup\screens" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da2f8f4a-1c2c-4cdf-ab88-79ffb0a037dc" name="Default Changelist" comment="" />
+      <created>1614176850341</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614176850341</updated>
+      <workItem from="1614235311674" duration="9743000" />
+    </task>
+    <task id="LOCAL-00001" summary="updated readme.md">
+      <created>1614234166662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614234166662</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated readme.md">
+      <created>1614235760393</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614235760393</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated readme.md">
+      <created>1614240240278</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614240240278</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updated readme.md">
+      <created>1614247667566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614247667566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated readme.md" />
+  </component>
+</project>

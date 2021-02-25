@@ -1,8 +1,8 @@
 package LucioAbenteuer.GameObjects;
 
-import LucioAbenteuer.Direction;
-import LucioAbenteuer.Images;
-import LucioAbenteuer.KeyEventHandler;
+import LucioAbenteuer.game.Direction;
+import LucioAbenteuer.game.Images;
+import LucioAbenteuer.game.KeyEventHandler;
 import javafx.scene.image.Image;
 import org.dyn4j.dynamics.Body;
 import org.dyn4j.geometry.MassType;
@@ -65,6 +65,7 @@ public class Lucio extends GameObject {
         } else if (isOnGround() && (currentDirect == Direction.RIGHT && getLinearVelocity().x == 0)) {
             return Images.MARIORIGHT;
         } else if (isOnGround() && (currentDirect == Direction.RIGHT && getLinearVelocity().x > 0)) {
+
             return Images.LUCIO_WALK_RIGHT;
         } else if (!isOnGround() && (currentDirect == Direction.RIGHT)) {
             return Images.LUCIO_JUMP_RIGHT;

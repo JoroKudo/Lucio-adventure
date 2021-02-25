@@ -1,9 +1,9 @@
 package LucioAbenteuer.GameObjects;
+import LucioAbenteuer.game.Const;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.transform.Affine;
 import org.dyn4j.dynamics.Body;
-import LucioAbenteuer.*;
 import org.dyn4j.geometry.Polygon;
 import org.dyn4j.geometry.Rectangle;
 
