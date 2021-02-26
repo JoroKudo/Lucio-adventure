@@ -22,9 +22,19 @@ test {
     useJUnitPlatform()
 }
 
-mainClassName = 'LucioAbenteuer.main.Launcher'
-
+application {
+    mainClassName = 'LucioAbenteuer.main.Launcher'
+}
 javafx {
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.graphics']
 
+}
+jar {
+    manifest {
+        attributes "Main-Class": 'LucioAbenteuer.main.Launcher'
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
