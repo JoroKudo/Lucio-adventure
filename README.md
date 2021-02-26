@@ -195,12 +195,12 @@ GameWinScreen
 
 # Fazit
 
-Hier kommt eure Reflexion zum Projekt.
+##Reflexion
 
-- Was lief gut/schlecht?
-- Wie seid ihr mit dem Endergebnis zufrieden?
-- Was habt ihr gelernt?
-- Wie verlief die Zusammenarbeit im Team?
-- Ist alles vorhanden oder was fehlt noch?
-- Was würdet ihr das nächste Mal anders angehen?
-- Etc.
+Ich fand das das coden am besten lief da wir fast immer ein funktionierendes Produkt hatten.
+Aber bei der zusammen arbeit gab es viele Probleme weil wir fast nie um die selben zeiten am arbeiten waren deswegen nicht immer informiert über den stand des Projektes.
+Mit dem Endergebniss  sind wir Sehr zufrieden da es alles kann was wir uns vorstellten.
+Während diesem Projekt lernten wir wie wichtig absprechung untereinander weil wir uns manchmal unsicher waren was wir machen müssen.
+Die zusammen arbeit im Team war eher schlecht da Ilias für einen grossteil des projektes nicht da war.
+Trotz all diesen Problemen ist unser Projekt vollständig.
+Das nächste Mal würden wir mehr zusammen absprechen und uns mehr im Team arrangieren.
