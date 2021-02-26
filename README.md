@@ -3,15 +3,12 @@
 
 
 
-![](RackMultipart20210224-4-rym020_html_cdf7c04903083f0e.gif)
-
 
 
 
 
 # Version 1.0.0, 3. Februar 2020 | Projektteam: Person 1, Person 2
 
-![](RackMultipart20210224-4-rym020_html_b81a80fdcdbfa84a.gif) ![](RackMultipart20210224-4-rym020_html_601e8f22d5ca4683.png) ![](RackMultipart20210224-4-rym020_html_f53323f407892050.png) ![](RackMultipart20210224-4-rym020_html_ebac3685538a4a2f.png)
 
 # Inhalt
 
@@ -175,6 +172,10 @@ GameScreen LVL3
 
 ![mockup_lucio](./Mockup/screens/screen%20(5).png)
 GameScreen LVL4
+
+<br/><br/>
+![mockup_lucio](./Mockup/screens/screen%20(8).png)
+GameScreen LVL5
 
 <br/><br/>
 

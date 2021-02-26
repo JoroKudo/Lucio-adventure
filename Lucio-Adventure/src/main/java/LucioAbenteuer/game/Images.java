@@ -1,4 +1,5 @@
 package LucioAbenteuer.game;
+
 import javafx.scene.image.Image;
 
 public class Images {
@@ -16,6 +17,7 @@ public class Images {
     public final static Image LVL2 = getImageSize("Chamb2.png");
     public final static Image LVL3 = getImageSize("Chamb3.png");
     public final static Image LVL4 = getImageSize("Chamb4.png");
+    public final static Image LVL5 = getImageSize("Chamb5.png");
     public final static Image WIN = getImageSize("win.png");
     public final static Image BLOCK = getImageSize("Block.png");
     public final static Image WALL = getImageSize("Wall.png");
@@ -46,6 +48,7 @@ public class Images {
             throw new RuntimeException("File not found: " + imagePath);
         }
     }
+
     private static Image getImageSize(String imagePath) {
         try {
             Image wimg = new Image("/Images/" + imagePath);

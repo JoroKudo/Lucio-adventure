@@ -1,4 +1,5 @@
 package LucioAbenteuer.gui;
+
 import LucioAbenteuer.common.BaseScene;
 import LucioAbenteuer.common.Initializable;
 import LucioAbenteuer.common.Navigator;
@@ -13,14 +14,15 @@ public class GameWonScene extends BaseScene implements Initializable {
     public GameWonScene(Navigator navigator) {
         super(navigator, Images.WIN);
         setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ENTER) {
+            if (e.getCode() == KeyCode.SPACE) {
                 navigator.goTo(SceneType.WELCOME);
             }
         });
     }
+
     @Override
     public void onInitialize() {
         Sound.stop(MusicType.BACKGROUND);
-        Sound.play(SoundEffectType.HEAL);
+        Sound.play(SoundEffectType.WIN);
     }
 }

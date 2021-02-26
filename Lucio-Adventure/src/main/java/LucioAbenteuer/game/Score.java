@@ -1,4 +1,5 @@
 package LucioAbenteuer.game;
+
 import javafx.geometry.VPos;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -7,6 +8,7 @@ import javafx.scene.text.TextAlignment;
 
 public class Score {
     public int coinCounter = 0;
+
     public void draw(GraphicsContext gc) {
         gc.setTextAlign(TextAlignment.CENTER);
         gc.setTextBaseline(VPos.CENTER);

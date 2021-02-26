@@ -1,4 +1,5 @@
 package LucioAbenteuer.game;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -8,8 +9,8 @@ import java.util.Map;
 
 public class Sound {
     private static MediaPlayer musicPlayer;
-    private static MediaPlayer effectPlayer;
     private final static Map<String, Media> cache = new HashMap<>();
+
     public static void play(MusicType music) {
         if (musicPlayer != null) {
             musicPlayer.stop();
@@ -19,6 +20,7 @@ public class Sound {
         musicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         musicPlayer.play();
     }
+
     public static void stop(MusicType music) {
         if (musicPlayer != null) {
             musicPlayer.stop();
@@ -26,10 +28,12 @@ public class Sound {
         musicPlayer = createMediaPlayer(getSoundFileName(music));
         musicPlayer.stop();
     }
+
     public static void play(SoundEffectType soundEffect) {
-        effectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
+        MediaPlayer effectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
         effectPlayer.play();
     }
+
     private static MediaPlayer createMediaPlayer(String filePath) {
         filePath = "/Sound/" + filePath;
 
@@ -42,6 +46,7 @@ public class Sound {
         }
         return new MediaPlayer(cache.get(filePath));
     }
+
     private static String getSoundFileName(SoundEffectType soundEffect) {
         return switch (soundEffect) {
             case HEAL -> "Heart.mp3";
@@ -49,12 +54,14 @@ public class Sound {
             case HURT -> "Hurt.mp3";
             case COIN -> "Coin.mp3";
             case KEY -> "Key.mp3";
+            case WIN -> "Win.mp3";
 
         };
     }
+
     private static String getSoundFileName(MusicType music) {
         return switch (music) {
-            case BACKGROUND -> "Lucio_BGM.mp3";
+            case BACKGROUND -> "Lucio_BGM.wav";
             case INTRO -> "MainMenu.wav";
             case GAME_OVER -> "gameOver.mp3";
         };

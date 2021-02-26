@@ -95,7 +95,7 @@ public class Rooms {
                     "WC000000000000000000000000000W" +
                     "WB000000000000C00000000000000W" +
                     "W00000C00000C0H0C0000000R0000W" +
-                    "WQQQBBBBQQQBBBBBBBBz00sBBB000W" +
+                    "WQQQBBBBQQBBBBBBBBBz00sBBB000W" +
                     "W00000000000000000BBBBBB00000W" +
                     "W0000000000000000000000000000W" +
                     "W00C0000000000R00000000000000W" +
@@ -118,8 +118,6 @@ public class Rooms {
                 case 'S' -> bodiesFromRoom.add(new Spikes(x, y, Images.SPIKES));
                 case 's' -> bodiesFromRoom.add(new Spikes(x, y, Images.SPIKES_SMOLL));
                 case 'z' -> bodiesFromRoom.add(new Spikes(x, y, Images.SPIKES_SMOLR));
-
-
                 case 'C' -> bodiesFromRoom.add(new Coin(x, y));
                 case 'F' -> bodiesFromRoom.add(new Floor(x, y));
                 case 'H' -> bodiesFromRoom.add(new Heart(x, y));
@@ -172,6 +170,7 @@ public class Rooms {
             case 5:
                 for (Body body : createRoom(room5)) {
                     physicWorld.addBody(body);
+                    Images.bgp = Images.LVL5;
                 }
                 break;
         }

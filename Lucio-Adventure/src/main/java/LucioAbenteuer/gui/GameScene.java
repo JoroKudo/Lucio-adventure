@@ -13,6 +13,7 @@ public class GameScene extends BaseScene implements Initializable {
 
     @Override
     public void onInitialize() {
+        Images.bgp = Images.LVL1;
         KeyEventHandler keyEventHandler = new KeyEventHandler();
         this.setOnKeyPressed(keyEventHandler);
         this.setOnKeyReleased(keyEventHandler);

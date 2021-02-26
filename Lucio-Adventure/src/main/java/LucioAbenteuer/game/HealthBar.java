@@ -1,10 +1,12 @@
 package LucioAbenteuer.game;
+
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public class HealthBar {
     public int life = 3;
     public Image image = Images.FULLHP;
+
     public void draw(GraphicsContext gc) {
 
         switch (life) {

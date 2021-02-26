@@ -12,13 +12,14 @@ public class GameOverScene extends BaseScene implements Initializable {
 
     public GameOverScene(Navigator navigator) {
         super(navigator, Images.GAMEOVER);
-        Sound.play(MusicType.GAME_OVER);
+
         setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.SPACE) {
                 navigator.goTo(SceneType.WELCOME);
             }
         });
     }
+
     @Override
     public void onInitialize() {
 

@@ -14,6 +14,7 @@ public class Heart extends GameObject {
         setMass(MassType.INFINITE);
 
     }
+
     public int heal(Body body, World<Body> physicWorld, int life) {
 
         if (life != 3) {

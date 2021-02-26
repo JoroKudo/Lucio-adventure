@@ -6,5 +6,6 @@ public enum SoundEffectType {
     HEAL,
     HURT,
     KEY,
+    WIN,
 
 }

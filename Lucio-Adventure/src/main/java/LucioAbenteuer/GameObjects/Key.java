@@ -14,13 +14,13 @@ public class Key extends GameObject {
         super(Images.KEY, x, y);
         setMass(MassType.INFINITE);
     }
-    public boolean open(Body body, World<Body> physicWorld, boolean isOpen) {
+
+    public boolean open(Body body, World<Body> physicWorld) {
 
         physicWorld.removeBody(body);
         Sound.play(SoundEffectType.KEY);
-        isOpen = true;
-        Rooms.exitlight
-                .image = Images.LIGHTON;
-        return isOpen;
+
+        Rooms.exitlight.image = Images.LIGHTON;
+        return true;
     }
 }

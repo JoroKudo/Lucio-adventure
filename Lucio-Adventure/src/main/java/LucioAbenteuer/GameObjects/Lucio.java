@@ -22,15 +22,18 @@ public class Lucio extends GameObject {
         this.keyEventHandler = keyEventHandler;
         setMass(MassType.NORMAL);
     }
+
     public void walkLeft() {
         currentDirect = Direction.LEFT;
         setLinearVelocity(-4, getLinearVelocity().y);
     }
+
     public void walkRight() {
 
         currentDirect = Direction.RIGHT;
         setLinearVelocity(4, getLinearVelocity().y);
     }
+
     public void handleNavigationEvents() {
 
         if (keyEventHandler.isRightKeyPressed())
@@ -42,6 +45,7 @@ public class Lucio extends GameObject {
         }
 
     }
+
     public void jump(double deltaInSec) {
         if (isOnGround()) {
             if (keyEventHandler.isSpaceKeyPressed() && jumpCooldown > 1) {
@@ -74,6 +78,7 @@ public class Lucio extends GameObject {
         }
         throw new RuntimeException("No valid image found");
     }
+
     public boolean isOnGround() {
         for (Body body : physicWorld.getBodies()) {
             if (physicWorld.isInContact(this, body)) {
